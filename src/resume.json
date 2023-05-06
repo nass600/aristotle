@@ -1,0 +1,469 @@
+{
+    "basics": {
+        "name": "Ignacio Velazquez",
+        "background": "https://images.ctfassets.net/iyeks1wrp3yi/nctdAu7vMT8zPm5qZ15yR/3ae41d3eb04c11b9c72d42dac901bf9a/overlay-yellow.png?w=400&h=400&q=100",
+        "picture": "https://s.gravatar.com/avatar/49f04efaf80ecb68e6e383919019b843?s=200",
+        "email": "ivelazquez85@gmail.com",
+        "label": "Software Engineer",
+        "phone": "+34 629 488 114",
+        "website": "http://ignaciovelazquez.es",
+        "summary": "<p>Over 12+ years of development experience in a variety of technologies mainly focused on web and mobile technology stack specialized in component-based Javascript SPAs consuming JWT/Oauth2-secured REST APIs or microservices.</p><p>Leading multidisciplinary teams for 6+ years across different tech companies targeted to different industries in various growth stages defining enterprise software architectures and using Agile Methodologies and Lean Processes as a rule of thumb.</p><p>I love product, entrepreneurship, conceptualization, and bootstrapping potential businesses from the beginning.</p>",
+        "location": {
+            "city": "Madrid,",
+            "countryCode": "Spain"
+        },
+        "profiles": [
+            {
+                "network": "Skype",
+                "username": "nass600",
+                "url": "@nass600"
+            },
+            {
+                "network": "Linkedin",
+                "username": "nass600",
+                "url": "https://linkedin.com/in/nass600"
+            },
+            {
+                "network": "Twitter",
+                "username": "nass600",
+                "url": "https://twitter.com/nass600"
+            },
+            {
+                "network": "Github",
+                "username": "nass600",
+                "url": "https://github.com/nass600"
+            },
+            {
+                "network": "Stackoverflow",
+                "username": "nass600",
+                "url": "https://stackoverflow.com/users/1828040/nass600"
+            },
+            {
+                "network": "Slideshare",
+                "username": "nass600",
+                "url": "https://slideshare.net/nass600"
+            },
+            {
+                "network": "Stackshare",
+                "username": "nass600",
+                "url": "https://stackshare.io/nass600/my-stack"
+            },
+            {
+                "network": "Ansible",
+                "username": "nass600",
+                "url": "https://galaxy.ansible.com/nass600"
+            },
+            {
+                "network": "Angellist",
+                "username": "nass600",
+                "url": "https://angel.co/nass600"
+            }
+        ]
+    },
+    "work": [
+        [
+            {
+                "company": "Packlink",
+                "logo": "https://images.ctfassets.net/iyeks1wrp3yi/6WOKqaKitfXj14wucp6FHV/53b7b93bd9e0254ca763e863dbf14d08/packlink.png",
+                "position": "Senior Engineering Manager",
+                "website": "https://packlink.com",
+                "startDate": "2019-08-01",
+                "summary": "Managing 36 engineers spread across 6 different teams including Tech Leads and Engineering Managers helping to grow their careers by building a trustworthy relationship via 1 on 1s and actively using metrics to increase their performance.|Performing the role of Engineering Manager in two of the teams working closely with Product Management contributing to planning, business and performance KPIs definition, best practices and code quality.|Assisted Engineering growth from 10 to 72 engineers and set direction for the department fostering a healthy and collaborative env by planning and developing the Career Path, event sponsorship, tech culture, comms strategy and budget.",
+                "highlights": [
+                    "Management",
+                    "Communication",
+                    "Leadership",
+                    "Tech Culture",
+                    "Vision",
+                    "Mission",
+                    "Feedback",
+                    "Coaching",
+                    "Agile",
+                    "Career Growth",
+                    "Process Definition",
+                    "OKR",
+                    "Growth"
+                ]
+            },
+            {
+                "company": "Packlink",
+                "logo": "https://images.ctfassets.net/iyeks1wrp3yi/6WOKqaKitfXj14wucp6FHV/53b7b93bd9e0254ca763e863dbf14d08/packlink.png",
+                "position": "Frontend Tech Lead",
+                "website": "https://packlink.com",
+                "startDate": "2018-10-01",
+                "endDate": "2019-08-01",
+                "summary": "Established the workflow and processes to align all frontend efforts across 5 different teams and redefined the software platform to a microfrontend-oriented architecture based on 8 React SPAs with a strong base of unit and e2e tests.|Bootstrapped the Design System which will power every single SPAs user interface and will set the direction for the company’s branding guidelines.|Worked as an active member of one of our business teams in a key project which doubled the revenue for the company and helped opening up market in UK.",
+                "highlights": [
+                    "React",
+                    "Redux",
+                    "Typescript",
+                    "Rollup",
+                    "Microfrontend",
+                    "Jest",
+                    "Docker",
+                    "Google Cloud Platform",
+                    "Circle-CI",
+                    "Gatsby",
+                    "Contentful",
+                    "SASS",
+                    "Design Systems",
+                    "BEM",
+                    "Accessibility"
+                ]
+            }
+        ],
+        [
+            {
+                "company": "Hostelworld",
+                "logo": "https://images.ctfassets.net/iyeks1wrp3yi/3Yz0jn21M7YydUVQCpbgpI/c45277debd4afdd92a1172e46f429221/logo_copy.png",
+                "position": "Applications Team Lead",
+                "website": "https://hostelworld.com",
+                "startDate": "2017-08-01",
+                "endDate": "2018-09-01",
+                "summary": "|Hired, mentor and managed a highly skilled set of 5 Software Engineers contributing to their career growth via 1-on-1s and performance reviews.|Software designed and planned major architecture changes and refactors in all applications to meet both our client expectations and our platform requirements.|Led the migration of hostelworld.com from a jQuery/PHP-based monolith to a Vue multipage application fed by a PHP powered Rest API.",
+                "highlights": [
+                    "Management",
+                    "Communication",
+                    "Leadership",
+                    "Tech Culture",
+                    "Vision",
+                    "Code Standards",
+                    "Software Architecture",
+                    "Agile",
+                    "Career Growth",
+                    "Process Definition"
+                ]
+            },
+            {
+                "company": "Hostelworld",
+                "logo": "https://images.ctfassets.net/iyeks1wrp3yi/3Yz0jn21M7YydUVQCpbgpI/c45277debd4afdd92a1172e46f429221/logo_copy.png",
+                "position": "Senior Software Engineer",
+                "website": "https://hostelworld.com",
+                "startDate": "2016-11-01",
+                "endDate": "2017-08-01",
+                "summary": "|Worked as a Full-Stack Engineer in one of the two SCRUM teams in charge of the flagship application architecting and developing new features taking care of the whole solution from the database structure and REST API to the frontend components.|Delivered either unit and end to end well-tested code as well as deeply code reviewed my peer contributions with special care in performance, software design and code readability.|Defined and developed the new styling architecture following Design System principles and SMACSS to modularize and homogenize the corporate identity across all the applications.",
+                "highlights": [
+                    "PHP",
+                    "Zend",
+                    "Silex",
+                    "Twig",
+                    "PHPUnit",
+                    "Redis",
+                    "MySQL",
+                    "VueJS",
+                    "Webpack",
+                    "ES2017",
+                    "Babel",
+                    "Jest",
+                    "SASS",
+                    "Design Systems",
+                    "UX",
+                    "Agile",
+                    "SCRUM"
+                ]
+            }
+        ],
+        {
+            "company": "Shazura",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/6GyIQwFZcNbJPqtHFi1ey8/6163e7de80119254347314239e2130f4/shazura.png",
+            "position": "Tech Lead",
+            "website": "http://shazura.com",
+            "startDate": "2015-08-01",
+            "endDate": "2016-10-01",
+            "summary": "|Lead the technology department's architecture design and team upskilling (8 people) reporting directly to the CTO and supporting him in management tasks and planning.|Created a core high availability Django REST APIs with persistence on a Big Data architecture responsible for storing millions of images and defined the continuous delivery process using Jenkins and AWS.|Designed (UX & UI) and developed all the dockerized dynamic client apps (SPAs) under AngularJS/ES2017 bundled with Webpack.",
+            "highlights": [
+                "Python",
+                "Django",
+                "REST API",
+                "Oauth2",
+                "Redis",
+                "Angular",
+                "Karma",
+                "Protractor",
+                "Babel",
+                "Webpack",
+                "SASS",
+                "ElasticSearch",
+                "PostgreSQL",
+                "Celery",
+                "AWS",
+                "Docker"
+            ]
+        },
+        {
+            "company": "NativeAD",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/5vl0ShiCUFezgVIBDgV4n5/868dbbb721c2e4bb30f1fdcd1b288bdd/native-ad.png",
+            "position": "Tech Lead",
+            "website": "http://native.ad",
+            "startDate": "2015-01-01",
+            "endDate": "2015-08-01",
+            "summary": "|Lead the technology department (Backend, Frontend and DevOps - 16 people) following Agile methodologies and designed the advertising platform architecture.|Built several high-traffic REST API under Symfony, PhalconPHP and Node using complex relational DBs and RabbitMQ as the main queue system all of them running under an AWS infrastructure.|Regarding the Frontend, developed the main AngularJS SPA (ES2015) using Webpack as the main bundler and Protractor/Karma for testing.",
+            "highlights": [
+                "PHP",
+                "Symfony",
+                "PhalconPHP",
+                "Behat",
+                "REST API",
+                "Oauth2",
+                "Redis",
+                "AWS",
+                "Angular",
+                "Karma",
+                "Protractor",
+                "Node",
+                "Express",
+                "Webpack",
+                "LESS",
+                "RabbitMQ",
+                "MongoDB"
+            ]
+        },
+        {
+            "company": "Idealmonkey",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/5Coz047u6zJCBXKw3mehMy/46c40206b5c1545922d259a793fd7354/idealmonkey.png",
+            "position": "Lead Frontend Software Engineer",
+            "website": "http://idealmonkey.com",
+            "startDate": "2013-08-01",
+            "endDate": "2014-07-01",
+            "summary": "|Started in the company at the earliest stage defining and developing the product's highly-interactive client applications in a small multi-skilling SCRUM team.|Developed from scratch a big sized SPA in Backbone/Handlebars, built with Grunt and using Mocha/Chai/Sinon as the main testing framework.|Used, defined and configured the Jenkins/Ansible infrastructure for deployment automation.",
+            "highlights": [
+                "Oauth2",
+                "REST API",
+                "Backbone",
+                "Handlebars",
+                "RequireJS",
+                "Mocha",
+                "Chai",
+                "Sinon",
+                "Grunt",
+                "Bootstrap",
+                "LESS",
+                "Vagrant",
+                "Jenkins",
+                "Ansible",
+                "TDD",
+                "BDD",
+                "Agile",
+                "Lean Startup"
+            ]
+        },
+        {
+            "company": "Bodaclick",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/1qBznyQfFijocwMmN3H2z4/060863ecf29577abc61fef78c071eda7/bodaclick.png",
+            "position": "Senior Software Engineer",
+            "website": "http://www.bodaclick.com/",
+            "startDate": "2012-10-01",
+            "endDate": "2013-05-01",
+            "summary": "|Working in a 20+ people tech department developing and maintaining the core API platform and the apps consuming it.|Refactored a great part of the old site into a REST API secured with Oauth2 using a hybrid database system based on MySQL and MongoDB.|Supervised the Frontend projects as Javascript Lead Developer and provided Symfony training to all dev departments.",
+            "highlights": [
+                "PHP",
+                "Symfony",
+                "PHPUnit",
+                "Behat",
+                "REST API",
+                "Memcache",
+                "Oauth2",
+                "jQuery",
+                "Bootstrap",
+                "LESS",
+                "RabbitMQ",
+                "MySQL",
+                "MongoDB",
+                "TDD",
+                "BDD",
+                "Agile"
+            ]
+        },
+        {
+            "company": "Ideup",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/51j4EKD6modOA2aEC5tj2s/ba02f859027cb9eb2fcb77ac34b7acec/ideup.png",
+            "position": "Backend Software Engineer",
+            "website": "http://www.ideup.com/",
+            "startDate": "2011-07-01",
+            "endDate": "2012-09-01",
+            "summary": "|Working in a small SCRUM team developing and designing the web architecture of highly interactive apps.|Developed a traditional multi-page app in Symfony/Twig all tested with PHPUnit with a huge load of jQuery and vanilla Javascript.|Developed several open-source Symfony bundles and got selected to speak at deSymfony 2012.",
+            "highlights": [
+                "PHP",
+                "Symfony",
+                "PHPUnit",
+                "Doctrine",
+                "Memcache",
+                "Varnish",
+                "jQuery",
+                "Sencha",
+                "RabbitMQ",
+                "MySQL",
+                "TDD",
+                "Agile",
+                "Lean Startup"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Illinois Institute of Technology, Chicago, USA",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/zTYnkfRCmM9dn2HmNxpYs/c03c246ea4a7d08bf89063ee4dd56d65/IIT.png",
+            "area": "",
+            "studyType": "Research: Web 2.0 and Rich Internet Applications",
+            "startDate": "2011-02-01",
+            "endDate": "2011-07-01",
+            "courses": [
+                "I stayed in Chicago as a transfer student during 6 months developing my Final Thesis.",
+                "I was awarded the grant for the Research Program in Web 2.0 and Rich Internet Applications (RIA) where I developed a video streaming Media Center Web App.",
+                "The delivered web application main purpose was media classification and playing. It was developed in PHP/Symfony2 and Twig/HTML5/CSS3."
+            ]
+        },
+        {
+            "institution": "Hochschule Hannover, Hannover, Germany",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/5NGLe0uGdURBSKlKUYyJMO/667cddb1adb5b67e42c86de909cd08c2/FHH.png",
+            "area": "",
+            "studyType": "Master IT Security & Graphics",
+            "startDate": "2009-09-01",
+            "endDate": "2010-08-01",
+            "courses": [
+                "Completed two full semesters of IT Security and Graphics Masters as transfer student (Erasmus Programme).",
+                "IT Security Master: I got a strong knowledge in security and algorythm implementation, web services, mobile apps and Geodata handling via Oracle databases.",
+                "Graphics Master: I implemented games in C++ and OpenGL, designed graphic desktop applications and learned basics of graphics and animations.",
+                "Courses: IT Security Protocols, Cryptography, Mobile Business Apps, Graphics, 3D Videogames, Web Services..."
+            ]
+        },
+        {
+            "institution": "Univ. Politécnica, Madrid, Spain",
+            "logo": "https://images.ctfassets.net/iyeks1wrp3yi/ppdAbPv9hbl7pRr3TQ70v/cfcfddb448a3b333c857076df73fc232/UPM.png",
+            "area": "Computer Science",
+            "studyType": "MS Degree",
+            "startDate": "2003-09-01",
+            "endDate": "2009-08-01",
+            "courses": [
+                "5-years Master Degree in Computer Science.",
+                "Courses: Software Project Management, OS and Networking Design, Object-Oriented and Concurrent Programming, Data Structures, Database Design/Admin, AI, Algorithms..."
+            ]
+        }
+    ],
+    "publications": [
+        {
+            "name": "Implementing corporate Design Systems in React",
+            "publisher": "BilboStack",
+            "releaseDate": "2020-02-25",
+            "website": "https://bit.ly/3aYsy6t"
+        },
+        {
+            "name": "Web apps building with Webpack",
+            "publisher": "Hostelworld Tech Congress",
+            "releaseDate": "2017-12-03",
+            "website": "https://bit.ly/3a0suBA"
+        },
+        {
+            "name": "PHP Task runners",
+            "publisher": "Hostelworld Porto Meetup",
+            "releaseDate": "2017-07-22",
+            "website": "https://bit.ly/2XmeGyV"
+        },
+        {
+            "name": "Formularios al limite",
+            "publisher": "deSymfony",
+            "releaseDate": "2012-06-15",
+            "website": "https://bit.ly/34rpbCo"
+        }
+    ],
+    "skills": [
+        {
+            "name": "REST API",
+            "level": "5"
+        },
+        {
+            "name": "Databases",
+            "level": "3"
+        },
+        {
+            "name": "Infrastructure",
+            "level": "2"
+        },
+        {
+            "name": "Javascript",
+            "level": "5"
+        },
+        {
+            "name": "SASS",
+            "level": "5"
+        },
+        {
+            "name": "Design",
+            "level": "3"
+        },
+        {
+            "name": "UX",
+            "level": "2"
+        },
+        {
+            "name": "Agile / Lean",
+            "level": "4"
+        },
+        {
+            "name": "Project Mgmt",
+            "level": "3"
+        },
+        {
+            "name": "Management",
+            "level": "4"
+        },
+        {
+            "name": "Communication",
+            "level": "5"
+        },
+        {
+            "name": "Problem Solving",
+            "level": "4"
+        },
+        {
+            "name": "People",
+            "level": "5"
+        }
+    ],
+    "languages": [
+        {
+            "name": "English",
+            "level": "Fluent"
+        },
+        {
+            "name": "German",
+            "level": "Basic"
+        },
+        {
+            "name": "Spanish",
+            "level": "Native"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Research Scholarship",
+            "date": "2011-02-01",
+            "awarder": "IIT",
+            "summary": "Full tuition Research Program scholarship at Illinois Institute of Technology."
+        }
+    ],
+    "interests": [
+        {
+            "name": "Movies / TV Shows",
+            "keywords": [
+                "Marvel",
+                "GOT",
+                "Sci-Fi"
+            ]
+        },
+        {
+            "name": "Travel",
+            "keywords": [
+                "Urban",
+                "Nature"
+            ]
+        },
+        {
+            "name": "Good wine",
+            "keywords": [
+                "Red",
+                "Ribera del Duero"
+            ]
+        }
+    ]
+}
