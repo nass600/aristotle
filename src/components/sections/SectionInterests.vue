@@ -4,29 +4,31 @@ import type { ResumeInterest } from '@/types/resume'
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    interests: {type: Array as PropType<ResumeInterest[]>, required: true}
+    title: {type: String, required: false, default: 'Interests'},
+    icon: {type: String, required: false, default: 'la-beer-solid'},
+    items: {type: Array as PropType<ResumeInterest[]>, required: true}
 })
 </script>
 
 <template>
     <section class="section-interests">
-        <section-title title="Interests" icon="la-beer-solid"/>
+        <section-title :title="title" :icon="icon"/>
         <div class="section-body">
             <ul>
                 <li
-                    v-for="interest, i in interests"
+                    v-for="item, i in items"
                     v-bind:key="`interest-${i}`"
                     class="interest"
                 >
-                    <p>{{ interest.name }}</p>
-                    <small class="secondary">{{ interest.keywords?.join(', ') }}</small>
+                    <p>{{ item.name }}</p>
+                    <small class="secondary">{{ item.keywords?.join(', ') }}</small>
                 </li>
             </ul>
         </div>
     </section>
 </template>
 
-<style>
+<style lang="scss">
 .section-interests {
     .interest {
         & + .interest {

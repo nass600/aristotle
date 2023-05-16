@@ -21,6 +21,9 @@ import AppActions from './AppActions.vue'
     }
 
     @media print {
+        .v-application {
+            display: block !important;
+        }
         .v-main {
             height: auto;
         }

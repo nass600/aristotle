@@ -5,30 +5,28 @@ import ResumeCard from '@/components/ResumeCard.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    publications: {type: Array as PropType<ResumePublication[]>, required: true},
-    displayDuration: {type: Boolean, required: false, default: true}
+    title: {type: String, required: false, default: 'Publications'},
+    icon: {type: String, required: false, default: 'la-bookmark-solid'},
+    items: {type: Array as PropType<ResumePublication[]>, required: true},
+    displayBody: {type: Boolean, required: false, default: true}
 })
 </script>
 
 <template>
     <section class="section-publications">
-        <section-title title="Publications" icon="la-bookmark-solid"></section-title>
+        <section-title :title="title" :icon="icon"></section-title>
         <div class="section-body section-body-cards">
             <resume-card
-                v-for="publication, i in publications"
+                v-for="item, i in items"
                 v-bind:key="`publication-${i}`"
-                :title="publication.name"
-                :subtitle="publication.publisher"
-                :start-date="publication.releaseDate"
-                :link="publication.website"
-                :display-end-date="false"
-                :display-duration="displayDuration"
+                :title="item.name"
+                :subtitle="item.publisher"
+                :start-date="item.releaseDate"
+                :end-date="null"
+                :body="item.summary?.split('|')"
+                :link="item.url"
+                :display-body="displayBody"
             />
         </div>
     </section>
 </template>
-
-<style>
-.section-publications {
-}
-</style>

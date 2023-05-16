@@ -6,15 +6,15 @@ defineProps({
 </script>
 
 <template>
-    <h2 class="section-title">
+    <div class="section-title">
         <div class="title-icon primary">
             <ov-icon :scale="1.6" :name="icon"/>
         </div>
-        <span class="title">{{title}}</span>
-    </h2>
+        <h2 class="title">{{title}}</h2>
+    </div>
 </template>
 
-<style>
+<style lang="scss">
 .section-title {
     display: flex;
     align-items: center;
@@ -40,18 +40,18 @@ defineProps({
 
 .sidebar .section-title {
     justify-content: center;
-    font-size: var(--h3-font-size);
 
     .title {
         color: var(--color-text);
+        font-size: var(--h3-font-size);
     }
 
     .title-icon {
         background-color: transparent;
         padding: 0;
         height: auto;
-        width: 1rem;
-        flex-basis: 1rem;
+        width: var(--spacer);
+        flex-basis: var(--spacer);
         margin-right: calc(var(--spacer) * 0.5);
         justify-content: center;
     }

@@ -1,57 +1,39 @@
-# essentials
+<p align="center"><img width="200" src="./src/assets/logo-dark.png" alt="Tivan logo"></p>
 
-## Project setup
+# Aristotle
 
-```
-# yarn
-yarn
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=bitbucket)](http://commitizen.github.io/cz-cli/)
+[![Netlify](https://img.shields.io/netlify/42b7f977-0ce0-4e7d-bc16-1430b6c5d91a?color=turquoise&logo=netlify&style=for-the-badge)](https://app.netlify.com/sites/cheery-toffee-f2d436/overview)
 
-# npm
+
+> Online resume builder
+
+## Installation
+
+Download the repo and build the Chrome extension
+```bash
+git clone git@bitbucket.org:nass600/tivan
+cd tivan
 npm install
-
-# pnpm
-pnpm install
 ```
 
-### Compiles and hot-reloads for development
+## Usage
 
-```
-# yarn
-yarn dev
-
-# npm
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
 ```
 
-### Compiles and minifies for production
+## Production
 
-```
-# yarn
-yarn build
+This repo is automatically deployed to [**Netlify**](https://app.netlify.com/sites/cheery-toffee-f2d436/overview) every time there is a change in the `master` branch
 
-# npm
-npm run build
+## License
 
-# pnpm
-pnpm build
-```
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE.md)
+file for details
 
-### Lints and fixes files
+## Authors
 
-```
-# yarn
-yarn lint
+*   [Ignacio Velazquez](https://ignaciovelazquez.es)
 
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).

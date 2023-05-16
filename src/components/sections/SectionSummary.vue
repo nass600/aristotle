@@ -2,20 +2,22 @@
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    summary: {type: String, required: true}
+    title: {type: String, required: false, default: 'Summary'},
+    icon: {type: String, required: false, default: 'la-paperclip-solid'},
+    items: {type: String, required: true}
 })
 </script>
 
 <template>
     <section class="section-summary">
-        <section-title title="Summary" icon="la-paperclip-solid"/>
-        <div class="section-body" v-html="summary"></div>
+        <section-title :title="title" :icon="icon"/>
+        <div class="section-body" v-html="items"></div>
     </section>
 </template>
 
-<style>
+<style lang="scss">
 .section-summary {
-    & p {
+    p {
         text-align: justify;
         margin-bottom: 0;
 

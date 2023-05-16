@@ -5,149 +5,19 @@
 //   $color-pack: false
 // );
 
-$app-menu-width: 600px;
+$app-menu-width: 700px;
 
-:root {
-    --c-font-size-base: 12px;
-    --c-page-width: 794px;
-    --c-page-height: 1122px;
-    --spacer: 1.5rem;
+.ghost-row {
+    background-color: black;
+    opacity: 0.5;
+    cursor: grabbing;
 }
 
-/* color palette */
-:root {
-    --background: #181818;
-    --color: white;
-}
+.v-row[data-draggable="true"] {
+    cursor: grab;
+    border-radius: map-get($rounded, 'lg');
 
-// .theme-corporate {
-//     .content {
-//         --color-background: white;
-//         --color-text: #292b2c;
-//         --color-primary: #1565c0;
-//         --color-secondary: #8a979e;
-//         --color-tertiary: #f5f5f5;
-//     }
-
-//     .sidebar {
-//         --color-background: #e0e0e0;
-//         --color-text: #424242;
-//         --color-primary: #1565c0;
-//         --color-secondary: #8a979e;
-//         --color-tertiary: #dad9d9;
-//     }
-// }
-
-// .theme-elite {
-//     .content {
-//         --color-background: white;
-//         --color-text: #292b2c;
-//         --color-primary: #d9534f;
-//         --color-secondary: #8a979e;
-//         --color-tertiary: #f5f5f5;
-//     }
-
-//     .sidebar {
-//         --color-background: #242324;
-//         --color-text: white;
-//         --color-primary: #d9534f;
-//         --color-secondary: #8a979e;
-//         --color-tertiary: #141314;
-//     }
-// }
-
-.theme-javascript {
-    .content {
-        --color-background: #313031;
-        --color-text: white;
-        --color-primary: #f0db4f;
-        --color-secondary: #8a979e;
-        --color-tertiary: #272627;
-    }
-
-    .sidebar {
-        --color-background: #f0db4f;
-        --color-text: #525052;
-        --color-primary: black;
-        --color-secondary: #92810c;
-        --color-tertiary: #f0db4f;
-    }
-}
-
-/* fonts */
-:root {
-    --font: 'Maven Pro', sans-serif;
-    --h1-font-size: 1.6rem;
-    --h2-font-size: 1.4rem;
-    --h3-font-size: 1.2rem;
-    --h4-font-size: 1.1rem;
-    --h5-font-size: 1rem;
-    --small-font-size: 0.8rem;
-}
-
-/* app */
-:root {
-    --avatar-size: calc(var(--sidebar-width) * 0.6);
-    --sidebar-width: calc(var(--page-width) * 0.275);
-    --icon-bg-size: 2.5rem;
-    --card-image-size: 3rem;
-    --card-timeline-thickness: 0.1rem;
-    --card-timeline-dots-size: calc(0.8rem + var(--card-timeline-thickness));
-    --badge-bg: #388e3c;
-    --badge-color: white;
-}
-
-@media screen {
-    :root {
-        --font-size-base: calc(var(--c-font-size-base) * 1.5);
-        --page-width: calc(var(--c-page-width) * 1.5);
-        --page-height: calc(var(--c-page-height) * 1.5);
-    }
-}
-
-@media print {
-    :root {
-        --font-size-base: 9pt;
-        --page-width: var(--c-page-width);
-        --page-height: var(--c-page-height);
-    }
-}
-
-
-@page {
-    /* size: A4; */
-    margin: 0;
-}
-@page :left {
-    margin-left: 0;
-}
-
-@page :right {
-    margin-left: 0;
-}
-
-@media print {
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        print-color-adjust: exact !important;
-        font-family: var(--font);
-        font-size: var(--font-size-base);
-    }
-
-    .main-document {
-        box-shadow: none;
-        min-height: none !important;
-        overflow: hidden;
-    }
-
-    .section-summary,
-    .section-languages,
-    .card,
-    .sidebar [class^="section-"],
-    section .title,
-    p {
-        page-break-inside: avoid;
+    &:hover {
+        background-color: #292929;
     }
 }

@@ -1,54 +1,46 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { ResumeProfile, SocialIcons } from '@/types/resume'
+import type { ResumeProfile } from '@/types/resume'
+import { ResumeSocialNetworkIcon } from '@/types/resume'
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    profiles: {type: Array as PropType<ResumeProfile[]>, required: true}
+    title: {type: String, required: false, default: 'Social'},
+    icon: {type: String, required: false, default: 'la-network-wired-solid'},
+    items: {type: Array as PropType<ResumeProfile[]>, required: true}
 })
-const icons: SocialIcons = {
-    'Skype': 'la-skype',
-    'Linkedin': 'la-linkedin',
-    'Twitter': 'la-twitter',
-    'Github': 'la-github',
-    'Stackoverflow': 'la-stack-overflow',
-    'Slideshare': 'la-slideshare',
-    'Stackshare': 'ri-stackshare-line',
-    'Ansible': 'co-ansible',
-    'Angellist': 'la-angellist',
+
+const networkIcon = (name: string) => {
+    return ResumeSocialNetworkIcon[name.toUpperCase() as keyof typeof ResumeSocialNetworkIcon] || 'la-vuejs'
 }
 </script>
 
 <template>
     <section class="section-social">
-        <section-title title="Social" icon="la-network-wired-solid"/>
+        <section-title :title="title" :icon="icon"/>
         <div class="section-body">
             <div class="items">
                 <a
                     class="item"
-                    v-for="profile in profiles"
-                    v-bind:key="`profile-${profile.network.toLowerCase()}`"
-                    :href="profile.url"
+                    v-for="item in items"
+                    v-bind:key="`profile-${item.network.toLowerCase()}`"
+                    :href="item.url"
                 >
-                    <ov-icon
-                        class="primary"
-                        :scale="1.25"
-                        :name="profile.network in icons ? icons[profile.network] : 'la-vuejs'"
-                    />
-                    <small>{{ profile.url.replace('https://', '') }}</small>
+                    <ov-icon class="primary" :scale="1.25" :name="networkIcon(item.network)"/>
+                    <small>{{ item.url.replace('https://', '') }}</small>
                 </a>
             </div>
         </div>
     </section>
 </template>
 
-<style>
+<style lang="scss">
 .section-social {
     .items {
         .item {
             display: flex;
             align-items: center;
-            & small {
+            small {
                 word-wrap: break-word;
                 flex: 1;
                 min-width: 0;

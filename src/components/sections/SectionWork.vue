@@ -5,44 +5,52 @@ import ResumeCard from '@/components/ResumeCard.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    work: {type: Array as PropType<(ResumeWork | ResumeWork[])[]>, required: true}
+    title: {type: String, required: false, default: 'Experience'},
+    icon: {type: String, required: false, default: 'la-briefcase-solid'},
+    items: {type: Array as PropType<(ResumeWork | ResumeWork[])[]>, required: true},
+    displayBody: {type: Boolean, required: false, default: true},
+    displayDuration: {type: Boolean, required: false, default: true}
 })
 </script>
 
 <template>
     <section class="section-work">
-        <section-title title="Experience" icon="la-briefcase-solid"/>
+        <section-title :title="title" :icon="icon"/>
         <div class="section-body section-body-cards">
             <ul class="work">
-                <template v-for="job, i in work" v-bind:key="`job-${i}`">
-                    <div class="card-group" v-if="Array.isArray(job)">
+                <template v-for="item, i in items" v-bind:key="`job-${i}`">
+                    <div class="card-group" v-if="Array.isArray(item)">
                         <resume-card
-                            :class="{'card-last': i === job.length - 1}"
-                            v-for="position, i in job"
+                            :class="{'card-last': i === item.length - 1}"
+                            v-for="position, i in item"
                             v-bind:key="`position-${i}`"
                             :logo="position.logo"
                             :title="position.position"
                             :subtitle="position.company"
                             :start-date="position.startDate"
                             :end-date="position.endDate"
-                            :body="position.summary.split('|')"
-                            :link="position.website"
+                            :body="position.summary"
+                            :link="position.url"
                             :tags="position.highlights"
                             :display-current="true"
+                            :display-body="displayBody"
+                            :display-duration="displayDuration"
                         />
                     </div>
 
                     <resume-card
-                        v-if="!Array.isArray(job)"
-                        :logo="job.logo"
-                        :title="job.position"
-                        :subtitle="job.company"
-                        :start-date="job.startDate"
-                        :end-date="job.endDate"
-                        :body="job.summary.split('|')"
-                        :link="job.website"
-                        :tags="job.highlights"
+                        v-if="!Array.isArray(item)"
+                        :logo="item.logo"
+                        :title="item.position"
+                        :subtitle="item.company"
+                        :start-date="item.startDate"
+                        :end-date="item.endDate"
+                        :body="item.summary"
+                        :link="item.url"
+                        :tags="item.highlights"
                         :display-current="true"
+                        :display-body="displayBody"
+                        :display-duration="displayDuration"
                     />
                 </template>
             </ul>
@@ -50,7 +58,7 @@ defineProps({
     </section>
 </template>
 
-<style>
+<style lang="scss">
 .section-work {
     .card-group {
         .card {

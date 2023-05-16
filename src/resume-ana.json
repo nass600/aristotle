@@ -29,7 +29,7 @@
                 "company": "Groupe Renault",
                 "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
                 "position": "Senior Project Engineer",
-                "website": "https://www.renaultgroup.com/en/",
+                "url": "https://www.renaultgroup.com/en/",
                 "startDate": "2022-11-01",
                 "summary": "Gestionar y definir técnicamente el desarrollo, industrialización y seguimiento de sistemas industriales de control por visión basados en Deep Learning, así como su control de calidad y plan de validación.|Garantizar el correcto arranque, explotación y mantenimiento del sistema industrial y consiguiente lanzamiento de nuevos productos con un incremento del performance y fiabilidad del 35% y 42% respectivamente."
             },
@@ -62,7 +62,7 @@
             "company": "Inse Rail",
             "logo": "https://pbs.twimg.com/profile_images/1039465787864637440/Dokw5i1q_400x400.jpg",
             "position": "Ingeniero de Proyectos",
-            "website": "https://inserail.es/en/",
+            "url": "https://inserail.es/en/",
             "startDate": "2015-08-01",
             "endDate": "2016-10-01",
             "summary": "Diseñar y desarrollar proyectos internacionales asegurando calidad, coste y tiempo, para diferentes empresas (Adif, Siemens, Thales) a lo largo del ciclo de vida del proyecto.|Establecer relaciones sólidas entre todas las partes interesadas (internas, proveedores, clientes) para conseguir el resultado más favorable.|Satisfacer la normativa y los requisitos de los clientes para poder responder a la demanda.|Brindar capacitación interna y perfeccionamiento en tecnologías punta."
@@ -71,7 +71,7 @@
             "company": "Reydel Automotive",
             "logo": "https://media.licdn.com/dms/image/C560BAQHIF5Uzj1ANMw/company-logo_200_200/0/1519869813616?e=2147483647&v=beta&t=JVVGk6cjJesbZi6TAKfax29hROgPbtdy48Sq1rNpZOY",
             "position": "Ingeniero Lean Manufacturing",
-            "website": "http://www.reydel.com/",
+            "url": "http://www.reydel.com/",
             "startDate": "2015-01-01",
             "endDate": "2015-08-01",
             "summary": "Analizar el proceso de fabricación actual, monitoreando y controlando KPIs (Downtime, eficiencia, desperdicio, WIP, etc.); logrando la reducción del tiempo de cambio de molde SMED en un 15% para permitir un aumento de la producción para diferentes clientes como Renault, Volkswagen y Grupo PSA entre otros.|Ejecución de metodologías lean (VSM, SMED y FMEA).|Estandarizar formas de trabajo y formar e implicar a los trabajadores para apoyar los objetivos de la empresa.|Fomento de la cooperación interdepartamental."
@@ -204,16 +204,16 @@
     ],
     "languages": [
         {
-            "name": "English",
-            "level": "Fluent|C1: TOEIC Score 990 (2022)|B2: Cambridge FCE (2017)"
+            "language": "English",
+            "fluency": "Fluent|C1: TOEIC Score 990 (2022)|B2: Cambridge FCE (2017)"
         },
         {
-            "name": "German",
-            "level": "Basic"
+            "language": "German",
+            "fluency": "Basic"
         },
         {
-            "name": "Spanish",
-            "level": "Native"
+            "language": "Spanish",
+            "fluency": "Native"
         }
     ]
 }

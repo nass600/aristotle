@@ -9,13 +9,12 @@ const props = defineProps({
     title: {type: String, required: true},
     subtitle: {type: String, required: true},
     startDate: {type: String, required: true},
-    endDate: String,
-    body: Array as PropType<string[]>,
+    endDate: {type: String as PropType<string | null>, required: false},
+    body: Array as PropType<string[] | string>,
     link: String,
     tags: Array as PropType<string[]>,
     displayDuration: {type: Boolean, required: false, default: true},
     displayCurrent: {type: Boolean, required: false, default: false},
-    displayEndDate: {type: Boolean, required: false, default: true},
     displayBody: {type: Boolean, required: false, default: true},
 })
 
@@ -53,12 +52,14 @@ const duration = computed(() => {
         <div class="card-block">
             <div class="card-header">
                 <h3 class="card-title">{{ title }} <span class="card-subtitle secondary">{{ subtitle }}</span></h3>
-                <small class="card-dates secondary">{{ dayjs(startDate).format('MMM YYYY') }}</small>
-                <small v-if="displayEndDate" class="card-dates secondary">
+                <small v-if="startDate" class="card-dates secondary">{{ dayjs(startDate).format('MMM YYYY') }}</small>
+                <small v-if="startDate && endDate !== null" class="card-dates secondary">
                     - {{ endDate ? dayjs(endDate).format('MMM YYYY') : 'now' }}
                 </small>
-                <small v-if="displayDuration" class="card-duration secondary">({{ duration }})</small>
-                <small v-if="!endDate && displayCurrent" class="card-badge">current</small>
+                <small v-if="startDate && displayDuration && endDate !== null" class="card-duration secondary">
+                    ({{ duration }})
+                </small>
+                <small v-if="startDate && !endDate && displayCurrent" class="card-badge">current</small>
             </div>
             <template v-if="body && displayBody">
                 <div class="card-body" v-if="!Array.isArray(body)" v-html="body"></div>
@@ -82,7 +83,7 @@ const duration = computed(() => {
     </div>
 </template>
 
-<style>
+<style lang="scss">
 .card {
     display: flex;
     padding: var(--spacer);
@@ -99,7 +100,7 @@ const duration = computed(() => {
         overflow: hidden;
         position: relative;
 
-        & img {
+        img {
             display: flex;
             max-width: 100%;
             height: auto;
@@ -117,10 +118,6 @@ const duration = computed(() => {
 
         .card-subtitle {
             color: var(--color-secondary);
-        }
-
-        .sidebar & {
-            text-transform: none;
         }
     }
 
@@ -153,26 +150,26 @@ const duration = computed(() => {
     .card-body {
         text-align: justify;
 
-        & p {
-            margin-bottom: $spacer/3;
+        p {
+            margin-bottom: calc(var(--spacer) / 3);
         }
 
-        & ul li {
+        ul li {
             text-align: justify;
             position: relative;
         }
 
         .content & {
-            & ul li {
-                padding-left: 1.5rem;
+            ul li {
+                padding-left: var(--spacer);
 
                 &::before {
                     position: absolute;
                     top: 0;
-                    left: 0.75rem;
+                    left: calc(var(--spacer) / 2);
                     content: ">";
-                    margin-left: -0.75rem;
-                    width: 1.5rem;
+                    margin-left: calc(var(--spacer) / 2 * -1);
+                    width: var(--spacer);
                     display: inline-block;
                     color: var(--color-primary);
                 }
@@ -214,9 +211,13 @@ const duration = computed(() => {
     }
     .card-title {
         font-size: var(--h5-font-size);
+        text-transform: none;
     }
     .card-footer {
         padding-top: calc(var(--spacer) * 0.25);
+    }
+    .card-body {
+        font-size: var(--small-font-size);
     }
     .card-link {
         .ov-icon {

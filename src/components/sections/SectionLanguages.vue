@@ -1,51 +1,48 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { ResumeLanguage, LanguagesMap } from '@/types/resume'
+import { ResumeLanguage, ResumeLanguageIcon, ResumeLanguageName } from '@/types/resume'
 import SectionTitle from '@/components/SectionTitle.vue'
 
 defineProps({
-    languages: {type: Array as PropType<ResumeLanguage[]>, required: true}
+    title: {type: String, required: false, default: 'Languages'},
+    icon: {type: String, required: false, default: 'la-language-solid'},
+    items: {type: Array as PropType<ResumeLanguage[]>, required: true}
 })
-
-const langMap: LanguagesMap = {
-    'spanish': 'es',
-    'english': 'gb',
-    'german': 'de',
-    'french': 'fr',
-}
 </script>
 
 <template>
     <section class="section-languages">
-        <section-title title="Languages" icon="la-language-solid"/>
-        <div class="section-body">
+        <section-title :title="title" :icon="icon"/>
+        <div v-if="items && items.length > 0" class="section-body">
             <ul class="items">
                 <li
                     class="item"
-                    v-for="language in languages"
-                    v-bind:key="`language-${language.name.toLowerCase()}`"
+                    v-for="item in items"
+                    v-bind:key="`language-${item.language.toLowerCase()}`"
                 >
                     <div class="language-icon">
-                        <ov-icon :scale="1.5" :name="`fi-square-${langMap[language.name.toLowerCase()]}`"/>
+                        <ov-icon :scale="1.3" :name="`${ResumeLanguageIcon[item.language.toUpperCase() as keyof typeof ResumeLanguageIcon]}`"/>
                     </div>
-                    <small>{{ language.name }}</small>
-                    <small class="language-level">
-                        <ul>
-                            <li :class="{'language-level-item': i > 0}"
-                                v-for="item, i in language.level?.split('|')"
-                                v-bind:key="`language-${language.name}-level-${i}`"
-                            >
-                                {{ item }}
-                            </li>
-                        </ul>
-                    </small>
+                    <small>{{ ResumeLanguageName[item.language.toUpperCase() as keyof typeof ResumeLanguageName] }}</small>
+                    <div v-if="item.fluency && !isNaN(parseInt(item.fluency))" class="language-level">
+                        <template v-for="index in 5" v-bind:key="`language-level-${index}`">
+                            <ov-icon
+                                class="primary"
+                                :scale="0.75"
+                                :name="index <= parseInt(item.fluency) ? 'bi-circle-fill' : 'bi-circle'"
+                            />
+                        </template>
+                    </div>
+                    <div v-if="item.fluency && isNaN(parseInt(item.fluency))" class="language-level">
+                        <small>{{ item.fluency }}</small>
+                    </div>
                 </li>
             </ul>
         </div>
     </section>
 </template>
 
-<style>
+<style lang="scss">
 .section-languages {
     .items {
         .item {
@@ -62,14 +59,16 @@ const langMap: LanguagesMap = {
                 justify-content: center;
                 border-radius: 50%;
                 overflow: hidden;
-                height: 22px;
-                width: 22px;
+                height: 18px;
+                width: 18px;
                 margin-right: calc(var(--spacer) * 0.25);
             }
 
             .language-level {
-                margin-left: auto;
                 text-align: right;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
 
                 .language-level-item {
                     opacity: 0.5;
@@ -79,7 +78,6 @@ const langMap: LanguagesMap = {
         }
     }
 }
-
 
 @media print {
     .section-languages {
