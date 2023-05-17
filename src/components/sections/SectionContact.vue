@@ -13,18 +13,34 @@ const props = defineProps({
     url: String,
     location: Object as PropType<ResumeLocation>
 })
-const address = computed(() => (
-    addressFormatter.format({
-        "road": props.location?.address,
-        "city": props.location?.city,
-        "postcode": props.location?.postalCode,
-        "county": props.location?.region,
-        "country": props.location?.countryCode,
+
+const items = computed(() => [
+    {
+        icon: 'la-mail-bulk-solid',
+        value: props.email
     },
     {
-        output: 'array'
-    })
-))
+        icon: 'la-mobile-solid',
+        value: props.phone
+    },
+    {
+        icon: 'la-link-solid',
+        value: props.url
+    },
+    {
+        icon: 'la-map-marker-solid',
+        value: addressFormatter.format({
+            "road": props.location?.address,
+            "city": props.location?.city,
+            "postcode": props.location?.postalCode,
+            "county": props.location?.region,
+            "country": props.location?.countryCode,
+        },
+        {
+            output: 'array'
+        }).join('<br>')
+    },
+])
 </script>
 
 <template>
@@ -32,58 +48,11 @@ const address = computed(() => (
         <section-title :title="title" :icon="icon"/>
         <div class="section-body">
             <ul class="items">
-                <li class="item">
-                    <ov-icon class="primary" :scale="1.25" name="la-mail-bulk-solid"/>
-                    <small>{{ email }}</small>
-                </li>
-                <li class="item">
-                    <ov-icon class="primary" :scale="1.25" name="la-mobile-solid"/>
-                    <small>{{ phone }}</small>
-                </li>
-                <li class="item" v-if="url">
-                    <ov-icon class="primary" :scale="1.25" name="la-link-solid"/>
-                    <small>{{ url }}</small>
-                </li>
-                <li class="item" v-if="location">
-                    <ov-icon class="primary" :scale="1.25" name="la-map-marker-solid"/>
-                    <small v-html="address.join('<br>')"></small>
+                <li v-for="item, i in items" v-bind:key="`contact-${i}`" class="icon-item">
+                    <ov-icon class="primary mr-2" :scale="1.25" :name="item.icon"/>
+                    <span v-html="item.value"></span>
                 </li>
             </ul>
         </div>
     </section>
 </template>
-
-<style lang="scss">
-.section-contact {
-    .items {
-        .item {
-            display: flex;
-            align-items: center;
-
-            small {
-                word-wrap: break-word;
-                flex: 1;
-                min-width: 0;
-            }
-
-            .ov-icon {
-                margin-right: calc(var(--spacer) * 0.5);
-            }
-
-            & + .item {
-                margin-top: calc(var(--spacer) * 0.25);
-            }
-        }
-
-    }
-}
-
-@media print {
-    .section-contact {
-        .ov-icon {
-            width: 16px;
-            height: 16px;
-        }
-    }
-}
-</style>

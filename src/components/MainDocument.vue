@@ -167,6 +167,7 @@ onMounted(() => {
 :root {
     --c-print-multiplier: 1.5;
     --c-font-size-base: 12px;
+    --c-font-size-base-sidebar: 9.5px;
     --c-page-width: 794px;
     --c-page-height: 1121px;
     --spacer: 1.5em;
@@ -181,12 +182,12 @@ onMounted(() => {
 /* fonts */
 :root {
     --font: 'Maven Pro', sans-serif;
-    --h1-font-size: 1.6em;
+    --h1-font-size: 2.0em;
     --h2-font-size: 1.4em;
     --h3-font-size: 1.2em;
     --h4-font-size: 1.1em;
     --h5-font-size: 1em;
-    --small-font-size: 0.8em;
+    --small-font-size: 0.9em;
 }
 
 /* app */
@@ -238,6 +239,21 @@ onMounted(() => {
     font-family: var(--font);
     font-weight: normal;
 
+    .icon-item {
+        display: flex;
+        align-items: center;
+
+        span {
+            word-wrap: break-word;
+            flex: 1;
+            min-width: 0;
+        }
+
+        & + .icon-item {
+            margin-top: calc(var(--spacer) * 0.25);
+        }
+    }
+
     .br-print {
         display: none;
         height: 9pt;
@@ -253,6 +269,7 @@ onMounted(() => {
         color: var(--color-text);
         flex: 0 0 var(--sidebar-width);
         width: var(--sidebar-width);
+        font-size: calc(var(--c-font-size-base-sidebar) * var(--screen-multiplier));
 
         & a {
             color: var(--color-text);
@@ -292,7 +309,6 @@ onMounted(() => {
     h3,
     h4,
     h5 {
-        text-transform: uppercase;
         margin-top: 0;
         font-weight: normal;
     }
@@ -315,6 +331,10 @@ onMounted(() => {
 
     h5 {
         font-size: var(--h5-font-size);
+    }
+
+    small {
+        font-size: var(--small-font-size);
     }
 
     [class^="section-"] {

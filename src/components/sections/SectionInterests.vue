@@ -32,7 +32,7 @@ defineProps({
 .section-interests {
     .interest {
         & + .interest {
-            margin-top: var(--spacer);
+            margin-top: calc(var(--spacer) * 0.5);
         }
     }
 }

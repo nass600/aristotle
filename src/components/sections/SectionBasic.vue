@@ -10,11 +10,11 @@ defineProps({
 <template>
     <section class="section-basic" :style="`background-image: url('${background}');`">
         <div class="section-body">
-            <div v-if="picture" class="avatar">
+            <div v-if="picture" class="avatar mx-auto my-4">
                 <img :src="picture" :alt="name">
             </div>
-            <h1 class="name primary" v-html="name"></h1>
-            <h3 class="label">{{ label }}</h3>
+            <h1 class="name mt-0 mb-4 primary" v-html="name"></h1>
+            <h1 class="label mb-4" v-html="label"></h1>
         </div>
     </section>
 </template>
@@ -29,7 +29,6 @@ defineProps({
     .avatar {
         border-radius: 50%;
         overflow: hidden;
-        margin: 0 auto var(--spacer);
         width: var(--avatar-size);
         height: var(--avatar-size);
         background-color: var(--color-background);
@@ -40,12 +39,8 @@ defineProps({
         }
     }
 
-    .name {
-        margin: 0 auto var(--spacer);
-    }
-
     .label {
-        margin-bottom: 0;
+        font-size: 1.6em;
     }
 }
 </style>

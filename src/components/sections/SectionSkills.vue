@@ -12,49 +12,32 @@ defineProps({
 
 <template>
     <section class="section-skills">
-        <section-title :title="title" :icon="icon"></section-title>
+        <section-title :title="title" :icon="icon"/>
         <div class="section-body">
             <ul class="skills">
-                <li v-for="item, i in items" v-bind:key="`skill-${i}`" class="skill d-flex flex-column">
+                <li v-for="item, i in items" v-bind:key="`skill-${i}`" class="icon-item flex-column align-stretch">
                     <div class="d-flex">
-                        <small>{{ item.name }}</small>
-                        <div v-if="item.level && !isNaN(parseInt(item.level))" class="skill-level">
-                            <template v-for="index in 5" v-bind:key="`skill-${index}`">
+                        <span>{{ item.name }}</span>
+                        <div class="ml-auto">
+                            <span v-if="item.level && !isNaN(parseInt(item.level))">
                                 <ov-icon
+                                    v-for="index in 5" v-bind:key="`skill-${index}`"
                                     class="primary"
                                     :scale="0.75"
                                     :name="index <= parseInt(item.level) ? 'bi-circle-fill' : 'bi-circle'"
                                 />
-                            </template>
-                        </div>
-                        <div v-if="item.level && isNaN(parseInt(item.level))" class="skill-level">
-                            <small>{{ item.level }}</small>
+                            </span>
+                            <span v-if="item.level && isNaN(parseInt(item.level))" class="skill-level">
+                                {{ item.level }}
+                            </span>
                         </div>
                     </div>
-                    <div class="card-tags" v-if="item.keywords">
-                        <ov-icon class="primary mr-1" :scale="0.6" name="la-tags-solid"/>
-                        <small class="card-tags-text secondary">{{ item.keywords.join(', ') }}</small>
+                    <div class="icon-item mt-1" v-if="item.keywords">
+                        <ov-icon class="primary mr-2" :scale="0.75" name="la-tags-solid"/>
+                        <small class="secondary">{{ item.keywords.join(', ') }}</small>
                     </div>
                 </li>
             </ul>
         </div>
     </section>
 </template>
-
-<style lang="scss">
-.section-skills {
-    .skills {
-        .skill {
-            .skill-level {
-                margin-left: auto;
-                display: flex;
-                align-items: center;
-            }
-
-            & + .skill {
-                margin-top: calc(var(--spacer) * 0.25);
-            }
-        }
-    }
-}
-</style>

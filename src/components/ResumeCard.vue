@@ -109,7 +109,6 @@ const duration = computed(() => {
 
 
     .card-title {
-        text-transform: uppercase;
         margin-bottom: 0;
 
         & + .card-caption {
@@ -209,31 +208,12 @@ const duration = computed(() => {
     .card-aside {
         display: none;
     }
-    .card-title {
-        font-size: var(--h5-font-size);
-        text-transform: none;
-    }
     .card-footer {
         padding-top: calc(var(--spacer) * 0.25);
-    }
-    .card-body {
-        font-size: var(--small-font-size);
     }
     .card-link {
         .ov-icon {
             display: none;
-        }
-        .card-link-text {
-            font-size: var(--small-font-size);
-        }
-    }
-}
-
-@media print {
-    .card {
-        .ov-icon {
-            width: 13px;
-            height: 13px;
         }
     }
 }

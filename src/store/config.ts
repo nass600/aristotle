@@ -1,6 +1,6 @@
 // Utilities
 import { defineStore } from 'pinia'
-import { SectionName, SectionOption, Theme } from '@/types/config'
+import { SectionName, Theme } from '@/types/config'
 
 export interface ConfigSection {
     name: SectionName,

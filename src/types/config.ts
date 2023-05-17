@@ -1,9 +1,3 @@
-export enum SectionOption {
-    SIDEBAR = 'Sidebar',
-    MAIN = 'Main',
-    NONE = 'None'
-}
-
 export enum Theme {
     JAVASCRIPT = 'javascript',
     ELITE = 'elite',

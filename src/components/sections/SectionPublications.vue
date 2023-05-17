@@ -14,7 +14,7 @@ defineProps({
 
 <template>
     <section class="section-publications">
-        <section-title :title="title" :icon="icon"></section-title>
+        <section-title :title="title" :icon="icon"/>
         <div class="section-body section-body-cards">
             <resume-card
                 v-for="item, i in items"

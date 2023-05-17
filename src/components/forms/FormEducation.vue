@@ -12,7 +12,12 @@
                 <v-col cols="11">
                     <v-row>
                         <v-col class="d-flex align-center" cols="2">
-                            <v-img :width="50" :height="50" :src="element.logo"/>
+                            <v-img
+                                :width="50"
+                                :height="50"
+                                :src="element.logo"
+                                :lazy-src="placeholder"
+                            />
                         </v-col>
                         <v-col cols="10">
                             <v-text-field v-model="element.logo" label="logo" hide-details/>
@@ -78,6 +83,7 @@
 import type { PropType } from 'vue'
 import { ref, computed } from 'vue'
 import draggable from 'vuedraggable'
+import placeholder from '@/assets/image-placeholder.png'
 
 const props = defineProps({
     modelValue: {type: Array as PropType<unknown[] | undefined>, required: true},

@@ -21,49 +21,15 @@ const networkIcon = (name: string) => {
         <div class="section-body">
             <div class="items">
                 <a
-                    class="item"
+                    class="icon-item"
                     v-for="item in items"
                     v-bind:key="`profile-${item.network.toLowerCase()}`"
                     :href="item.url"
                 >
-                    <ov-icon class="primary" :scale="1.25" :name="networkIcon(item.network)"/>
-                    <small>{{ item.url.replace('https://', '') }}</small>
+                    <ov-icon class="primary mr-2" :scale="1.25" :name="networkIcon(item.network)"/>
+                    <span>{{ item.username }}</span>
                 </a>
             </div>
         </div>
     </section>
 </template>
-
-<style lang="scss">
-.section-social {
-    .items {
-        .item {
-            display: flex;
-            align-items: center;
-            small {
-                word-wrap: break-word;
-                flex: 1;
-                min-width: 0;
-            }
-
-            .ov-icon {
-                margin-right: calc(var(--spacer) * 0.5);
-            }
-
-            & + .item {
-                margin-top: calc(var(--spacer) * 0.25);
-            }
-        }
-
-    }
-}
-
-@media print {
-    .section-social {
-        .ov-icon {
-            width: 16px;
-            height: 16px;
-        }
-    }
-}
-</style>

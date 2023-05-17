@@ -23,6 +23,7 @@ defineProps({
 
     .title {
         color: var(--color-primary);
+        text-transform: uppercase;
     }
 
     .title-icon {
@@ -43,7 +44,6 @@ defineProps({
 
     .title {
         color: var(--color-text);
-        font-size: var(--h3-font-size);
     }
 
     .title-icon {
@@ -54,15 +54,6 @@ defineProps({
         flex-basis: var(--spacer);
         margin-right: calc(var(--spacer) * 0.5);
         justify-content: center;
-    }
-}
-
-@media print {
-    .section-title {
-        .ov-icon {
-            width: 20px;
-            height: 20px;
-        }
     }
 }
 </style>
