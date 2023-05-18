@@ -17,7 +17,7 @@
                     <template v-slot:item="{ props, item }">
                         <v-list-item v-bind="props" :title="item?.raw?.title">
                             <template v-slot:prepend>
-                                <ov-icon class="mr-4" :scale="1.3" :name="item?.raw?.icon"/>
+                                <ov-icon class="mr-4 text-black" :scale="1.3" :name="item?.raw?.icon"/>
                             </template>
                         </v-list-item>
                     </template>
@@ -42,7 +42,7 @@
                             <v-col cols="5">
                                 <v-text-field v-model="element.language" label="language" disabled hide-details>
                                     <template v-slot:prepend-inner>
-                                        <ov-icon :scale="1.5" :name="icon(element.language)" class="mr-2"/>
+                                        <ov-icon :scale="1.5" :name="icon(element.language)" class="mr-2 text-black"/>
                                     </template>
                                 </v-text-field>
                             </v-col>

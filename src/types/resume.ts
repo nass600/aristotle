@@ -12,10 +12,18 @@ export enum ResumeSocialNetworkName {
     TIKTOK = 'tiktok',
     INSTAGRAM = 'instagram',
     YOUTUBE = 'youtube',
-    TUMBLR = 'TUMBLR',
+    TUMBLR = 'tumblr',
     PINTEREST = 'pinterest',
     TWITCH = 'twitch',
     REDDIT = 'reddit',
+    VIMEO = 'vimeo',
+    DRIBBBLE = 'dribbble',
+    XING = 'xing',
+    BITBUCKET = 'bitbucket',
+    GITLAB = 'gitlab',
+    QQ = 'qq',
+    QUORA = 'quora',
+    DISCORD = 'discord',
 }
 
 export enum ResumeSocialNetworkIcon {
@@ -36,6 +44,14 @@ export enum ResumeSocialNetworkIcon {
     PINTEREST = 'la-pinterest',
     TWITCH = 'la-twitch',
     REDDIT = 'la-reddit',
+    VIMEO = 'la-vimeo',
+    DRIBBBLE = 'la-dribbble',
+    XING = 'la-xing',
+    BITBUCKET = 'la-bitbucket',
+    GITLAB = 'la-gitlab',
+    QQ = 'la-qq',
+    QUORA = 'la-quora',
+    DISCORD = 'la-discord',
 }
 
 export enum ResumeLanguageName {
@@ -46,6 +62,16 @@ export enum ResumeLanguageName {
     ITALIAN = 'Italian',
     PORTUGUESE = 'Portuguese',
     JAPANESE = 'Japanese',
+    RUSSIAN = 'Russian',
+    CHINESE = 'Chinese',
+    MANDARIN = 'Mandarin',
+    KOREAN = 'Korean',
+    HINDI = 'Hindi',
+    BENGALI = 'Bengali',
+    URDU = 'Urdu',
+    INDONESIAN = 'Indonesian',
+    TURKISH = 'Turkish',
+    ARABIC = 'Arabic',
 }
 
 export enum ResumeLanguageIcon {
@@ -56,6 +82,16 @@ export enum ResumeLanguageIcon {
     ITALIAN = 'fi-square-it',
     PORTUGUESE = 'fi-square-pt',
     JAPANESE = 'fi-square-jp',
+    RUSSIAN = 'fi-square-ru',
+    CHINESE = 'fi-square-cn',
+    MANDARIN = 'fi-square-cn',
+    KOREAN = 'fi-square-kr',
+    HINDI = 'fi-square-in',
+    BENGALI = 'fi-square-in',
+    URDU = 'fi-square-pk',
+    INDONESIAN = 'fi-square-id',
+    TURKISH = 'fi-square-tr',
+    ARABIC = 'fi-square-sa',
 }
 
 export interface ResumeProfile {
@@ -76,9 +112,9 @@ export interface ResumeBasics {
     name: string;
     background?: string;
     picture?: string;
-    email: string;
+    email?: string;
     label: string;
-    phone: string;
+    phone?: string;
     url?: string;
     summary?: string;
     location: ResumeLocation;
@@ -86,7 +122,27 @@ export interface ResumeBasics {
 }
 
 export interface ResumeWork {
-    company: string;
+    name: string;
+    logo?: string;
+    position: string;
+    url?: string;
+    startDate: string;
+    endDate?: string;
+    summary?: string[];
+    highlights?: string[];
+}
+
+export interface ResumeProject {
+    name: string;
+    url?: string;
+    startDate: string;
+    endDate?: string;
+    summary?: string[];
+    highlights?: string[];
+}
+
+export interface ResumeVolunteer {
+    organization: string;
     logo?: string;
     position: string;
     url?: string;
@@ -98,10 +154,10 @@ export interface ResumeWork {
 
 export interface ResumeEducation {
     institution: string;
-    studyType: string;
+    studyType?: string;
+    area: string;
     url?: string;
     logo?: string;
-    area?: string;
     startDate: string;
     endDate?: string;
     courses?: string[];
@@ -114,6 +170,14 @@ export interface ResumePublication {
     releaseDate: string;
     url?: string;
     summary?: string;
+}
+
+export interface ResumeReference {
+    name: string;
+    position?: string;
+    date: string;
+    picture?: string;
+    reference: string;
 }
 
 export interface ResumeCertificate {
@@ -150,6 +214,7 @@ export interface Resume {
     basics: ResumeBasics;
     work?: ResumeWork[];
     education?: ResumeEducation[];
+    volunteer?: ResumeVolunteer[];
     publications?: ResumePublication[];
     certificates?: ResumeCertificate[];
     skills?: ResumeSkill[];
@@ -159,4 +224,6 @@ export interface Resume {
     languages?: ResumeLanguage[];
     awards?: ResumeAward[];
     interests?: ResumeInterest[];
+    references?: ResumeReference[];
+    projects?: ResumeProject[];
 }

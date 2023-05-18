@@ -1,159 +1,31 @@
 <script setup lang="ts">
-import SectionBasic from '@/components/sections/SectionBasic.vue'
-import SectionSummary from '@/components/sections/SectionSummary.vue'
-import SectionWork from '@/components/sections/SectionWork.vue'
-import SectionCertificates from '@/components/sections/SectionCertificates.vue'
-import SectionEducation from '@/components/sections/SectionEducation.vue'
-import SectionPublications from '@/components/sections/SectionPublications.vue'
-import SectionSkills from '@/components/sections/SectionSkills.vue'
-import SectionAwards from '@/components/sections/SectionAwards.vue'
-import SectionInterests from '@/components/sections/SectionInterests.vue'
-import SectionLanguages from '@/components/sections/SectionLanguages.vue'
-import SectionContact from '@/components/sections/SectionContact.vue'
-import SectionSocial from '@/components/sections/SectionSocial.vue'
-import { ref, computed, onMounted } from 'vue'
-import { useResumeStore } from '@/store/resume'
 import { useConfigStore } from '@/store/config'
-import { SectionName } from '@/types/config'
-import { ConfigSection } from '@/store/config'
 
-defineProps({
-    msg: String
-})
-
-const el = ref()
-const resume = useResumeStore()
 const config = useConfigStore()
-// const addPageBreak = (element: Element) => {
-//     const tempDiv = document.createElement('div');
-//     const instance = createApp(PageBreak).mount(tempDiv);
-
-//     document.body.appendChild(instance.$el);
-//     element.parentNode?.insertBefore(instance.$el, element)
-// }
-
-interface Result {
-    component: any,
-    props: object
-}
-
-const sidebarSections = computed(() => prepareSections(config.sections.sidebar))
-
-const mainSections = computed(() => prepareSections(config.sections.main))
-
-const prepareSections = (sections: ConfigSection[]): Result[] => {
-    const results: Result[] = []
-
-    for (const section of sections) {
-        const item = {title: section.title, icon: section.icon}
-        switch (section.name) {
-        case SectionName.CONTACT:
-            if (!resume.basics || !resume.basics.email) {
-                break
-            }
-            results.push({
-                component: SectionContact,
-                props: {
-                    ...item,
-                    email: resume.basics?.email,
-                    phone: resume.basics?.phone,
-                    url: resume.basics?.url,
-                    location: resume.basics?.location,
-                }
-            })
-            break
-        case SectionName.SOCIAL:
-            if (!resume.basics?.profiles || resume.basics.profiles.length === 0) { break }
-            results.push({component: SectionSocial, props: {...item, items: resume.basics?.profiles}})
-            break
-        case SectionName.SKILLS:
-            if (!resume.skills || resume.skills.length === 0) { break }
-            results.push({component: SectionSkills, props: {...item, items: resume.skills}})
-            break
-        case SectionName.EXPERTISE:
-            if (!resume.expertise || resume.expertise.length === 0) { break }
-            results.push({component: SectionSkills, props: {...item, items: resume.expertise}})
-            break
-        case SectionName.TECHNICAL_SKILLS:
-            if (!resume.technicalSkills || resume.technicalSkills.length === 0) { break }
-            results.push({component: SectionSkills, props: {...item, items: resume.technicalSkills}})
-            break
-        case SectionName.SOFT_SKILLS:
-            if (!resume.softSkills || resume.softSkills.length === 0) { break }
-            results.push({component: SectionSkills, props: {...item, items: resume.softSkills}})
-            break
-        case SectionName.LANGUAGES:
-            if (!resume.languages || resume.languages.length === 0) { break }
-            results.push({component: SectionLanguages, props: {...item, items: resume.languages}})
-            break
-        case SectionName.AWARDS:
-            if (!resume.awards || resume.awards.length === 0) { break }
-            results.push({component: SectionAwards, props: {...item, items: resume.awards, displayBody: section.displayBody}})
-            break
-        case SectionName.PUBLICATIONS:
-            if (!resume.publications || resume.publications.length === 0) { break }
-            results.push({component: SectionPublications, props: {...item, items: resume.publications, displayBody: section.displayBody}})
-            break
-        case SectionName.CERTIFICATES:
-            if (!resume.certificates || resume.certificates.length === 0) { break }
-            results.push({component: SectionCertificates, props: {...item, items: resume.certificates}})
-            break
-        case SectionName.INTERESTS:
-            if (!resume.interests || resume.interests.length === 0) { break }
-            results.push({component: SectionInterests, props: {...item, items: resume.interests}})
-            break
-        case SectionName.SUMMARY:
-            if (!resume.basics?.summary) { break }
-            results.push({component: SectionSummary, props: {...item, items: resume.basics?.summary}})
-            break
-        case SectionName.WORK:
-            if (!resume.work || resume.work.length === 0) { break }
-            results.push({component: SectionWork, props: {...item, items: resume.groupedJobs, displayBody: section.displayBody, displayDuration: section.displayDuration}})
-            break
-        case SectionName.EDUCATION:
-            if (!resume.education || resume.education.length === 0) { break }
-            results.push({component: SectionEducation, props: {...item, items: resume.education, displayBody: section.displayBody, displayDuration: section.displayDuration}})
-            break
-        }
-    }
-
-    return results
-
-}
-
-onMounted(() => {
-
-    // const element = document.elementFromPoint(mainDocument.clientWidth + 100, pageHeight)
-    // addPageBreak(element)
-})
 </script>
 
 <template>
     <div
-        ref="el"
         id="main-document"
         class="main-document"
     >
         <div class="sidebar">
-            <section-basic
-                v-if="resume.basics"
-                :name="resume.basics.name"
-                :background="resume.basics.background"
-                :picture="resume.basics.picture"
-                :label="resume.basics.label"
-            />
             <component
-                v-for="section, i in sidebarSections"
+                v-for="section, i in config.renderSections.sidebar"
                 v-bind:key="`sidebar-section-${i}`"
-                :is="section.component"
+                :is="`section-${section.component}`"
+                :title="section.title"
+                :icon="section.icon"
                 v-bind="section.props"
             />
         </div>
         <div class="content">
             <component
-                v-for="section, i in mainSections"
+                v-for="section, i in config.renderSections.main"
                 v-bind:key="`main-section-${i}`"
-                :is="section.component"
+                :is="`section-${section.component}`"
+                :title="section.title"
+                :icon="section.icon"
                 v-bind="section.props"
             />
             <div v-for="index in config.blanks" :key="index" class="br-print">&nbsp;</div>
@@ -231,7 +103,6 @@ onMounted(() => {
 
 .main-document {
     width: var(--page-width);
-    // min-height: var(--page-height);
     line-height: 1.4;
     display: flex;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
@@ -242,6 +113,11 @@ onMounted(() => {
     .icon-item {
         display: flex;
         align-items: center;
+
+        .ov-icon,
+        .v-icon {
+            margin-right: calc(var(--spacer) * 0.25);
+        }
 
         span {
             word-wrap: break-word;

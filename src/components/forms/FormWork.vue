@@ -27,10 +27,7 @@
                             <v-text-field v-model="element.position" label="position" hide-details/>
                         </v-col>
                         <v-col cols="12">
-                            <v-text-field v-model="element.company" label="company" hide-details/>
-                        </v-col>
-                        <v-col cols="12">
-                            <v-text-field v-model="element.url" label="url" hide-details/>
+                            <v-text-field v-model="element.name" label="name" hide-details/>
                         </v-col>
                         <v-col cols="6">
                             <v-text-field v-model="element.startDate" label="startDate" type="date" hide-details/>
@@ -57,6 +54,9 @@
                                     <v-btn prepend-icon="mdi-plus" @click="() => element.summary.push('')">Add Summary</v-btn>
                                 </v-col>
                             </v-row>
+                        </v-col>
+                        <v-col cols="12">
+                            <v-text-field v-model="element.url" label="url" hide-details/>
                         </v-col>
                         <v-col cols="12">
                             <v-combobox

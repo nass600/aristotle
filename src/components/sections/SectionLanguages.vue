@@ -17,7 +17,7 @@ defineProps({
             <ul class="items">
                 <li class="icon-item" v-for="item in items" v-bind:key="`language-${item.language.toLowerCase()}`">
                     <ov-icon
-                        class="mr-2"
+                        class="text-black"
                         :scale="1.25"
                         :name="`${ResumeLanguageIcon[item.language.toUpperCase() as keyof typeof ResumeLanguageIcon]}`"
                     />

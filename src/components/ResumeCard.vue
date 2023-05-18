@@ -6,11 +6,13 @@ import pluralize from 'pluralize'
 
 const props = defineProps({
     logo: String,
+    preTitle: {type: String, required: false},
     title: {type: String, required: true},
-    subtitle: {type: String, required: true},
+    subtitle: {type: String, required: false},
     startDate: {type: String, required: true},
     endDate: {type: String as PropType<string | null>, required: false},
-    body: Array as PropType<string[] | string>,
+    body: {type: [Array, String] as PropType<string[] | string>, required: false},
+    score: String,
     link: String,
     tags: Array as PropType<string[]>,
     displayDuration: {type: Boolean, required: false, default: true},
@@ -44,14 +46,18 @@ const duration = computed(() => {
 
 <template>
     <div class="card">
-        <div class="card-aside" v-if="logo">
+        <div class="card-aside">
             <div class="card-image">
-                <img :src="logo" :alt="title">
+                <img v-if="logo" :src="logo" :alt="title"/>
             </div>
         </div>
         <div class="card-block">
             <div class="card-header">
-                <h3 class="card-title">{{ title }} <span class="card-subtitle secondary">{{ subtitle }}</span></h3>
+                <h3 class="card-title">
+                    <span v-if="preTitle" class="mr-2">{{ preTitle }}</span>
+                    <span v-if="title" class="mr-2">{{ title }}</span>
+                    <span v-if="subtitle" class="card-subtitle secondary">{{ subtitle }}</span>
+                </h3>
                 <small v-if="startDate" class="card-dates secondary">{{ dayjs(startDate).format('MMM YYYY') }}</small>
                 <small v-if="startDate && endDate !== null" class="card-dates secondary">
                     - {{ endDate ? dayjs(endDate).format('MMM YYYY') : 'now' }}
@@ -63,20 +69,24 @@ const duration = computed(() => {
             </div>
             <template v-if="body && displayBody">
                 <div class="card-body" v-if="!Array.isArray(body)" v-html="body"></div>
-                <div class="card-body" v-if="Array.isArray(body)">
+                <div class="card-body" v-if="Array.isArray(body) && body.length > 0">
                     <ul>
                         <li v-for="item, i in body" v-bind:key="`body-${i}`" v-html="item"></li>
                     </ul>
                 </div>
             </template>
             <div v-if="link || tags" class="card-footer">
-                <div class="card-link" v-if="link">
-                    <ov-icon class="primary" :scale="1" name="la-link-solid"/>
-                    <span class="card-link-text secondary">{{ link }}</span>
+                <div class="icon-item" v-if="score">
+                    <ov-icon class="primary" :scale="1" name="la-award-solid"/>
+                    <span class="secondary">{{ score }}</span>
                 </div>
-                <div class="card-tags" v-if="tags">
+                <div class="icon-item" v-if="link">
+                    <ov-icon class="primary" :scale="1" name="la-link-solid"/>
+                    <span class="secondary">{{ link }}</span>
+                </div>
+                <div class="icon-item" v-if="tags">
                     <ov-icon class="primary" :scale="1" name="la-tags-solid"/>
-                    <span class="card-tags-text secondary">{{ tags.join(', ') }}</span>
+                    <span class="secondary">{{ tags.join(', ') }}</span>
                 </div>
             </div>
         </div>
@@ -96,6 +106,8 @@ const duration = computed(() => {
 
     .card-image {
         border-radius: 50%;
+        width: var(--card-image-size);
+        height: var(--card-image-size);
         background-color: var(--color-tertiary);
         overflow: hidden;
         position: relative;
@@ -110,6 +122,7 @@ const duration = computed(() => {
 
     .card-title {
         margin-bottom: 0;
+        text-transform: uppercase;
 
         & + .card-caption {
             margin-top: calc(var(--spacer) / 4);
@@ -156,6 +169,7 @@ const duration = computed(() => {
         ul li {
             text-align: justify;
             position: relative;
+            min-height: 1.4em;
         }
 
         .content & {
@@ -175,45 +189,72 @@ const duration = computed(() => {
             }
         }
     }
-
-    .card-link {
-        display: flex;
-        align-items: center;
-
-        .ov-icon {
-            margin-right: calc(var(--spacer) * 0.25);
-        }
-
-        & + .card-highlights,
-        & + .card-tags {
-            margin-top: calc(var(--spacer) * 0.5);
-        }
-    }
-
-    .card-tags {
-        display: flex;
-        align-items: flex-start;
-
-        .ov-icon {
-            margin-top: 3px;
-        }
-
-        .card-tags-text {
-            margin-left: calc(var(--spacer) * 0.25);
-        }
-    }
 }
 
 .sidebar .card {
     .card-aside {
         display: none;
     }
+    .card-title {
+        text-transform: none;
+    }
+    .card-body,
     .card-footer {
         padding-top: calc(var(--spacer) * 0.25);
     }
-    .card-link {
+    .card-footer {
         .ov-icon {
             display: none;
+        }
+    }
+}
+
+.card-group {
+    .card {
+        .card-aside::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: calc(var(--spacer) * -2);
+            left: 50%;
+            width: var(--card-timeline-thickness);
+            margin-left: calc((var(--card-timeline-thickness) / 2) * -1);
+            background-color: var(--color-secondary);
+        }
+
+        & + .card {
+            .card-aside {
+                &::before {
+                    top: calc(var(--spacer) * -1);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: var(--card-timeline-dots-size);
+                    height: var(--card-timeline-dots-size);
+                    border: var(--card-timeline-thickness) solid var(--color-secondary);
+                    border-radius: 50%;
+                    background-color: var(--color-background);
+                    top: calc((var(--card-image-size) / 2) - (var(--card-timeline-dots-size) / 2) - var(--card-timeline-thickness));
+                    left: 50%;
+                    margin-left: calc((var(--card-timeline-dots-size) / 2) * -1);
+                }
+
+                .card-image {
+                    background-color: transparent;
+
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .card.card-last {
+        .card-aside::before {
+            bottom: 92%;
         }
     }
 }

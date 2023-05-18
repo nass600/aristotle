@@ -11,17 +11,28 @@
                 <v-col v-if="index !== 0" cols="12"><v-divider/></v-col>
                 <v-col cols="11">
                     <v-row>
+                        <v-col class="d-flex align-center" cols="2">
+                            <v-img
+                                :width="50"
+                                :height="50"
+                                :src="element.picture"
+                                :lazy-src="placeholder"
+                            />
+                        </v-col>
+                        <v-col cols="10">
+                            <v-text-field v-model="element.picture" label="picture" hide-details/>
+                        </v-col>
                         <v-col cols="12">
                             <v-text-field v-model="element.name" label="name" hide-details/>
                         </v-col>
-                        <v-col cols="8">
-                            <v-text-field v-model="element.issuer" label="awarder" hide-details/>
+                        <v-col cols="12">
+                            <v-text-field v-model="element.position" label="position" hide-details/>
                         </v-col>
-                        <v-col cols="4">
+                        <v-col cols="6">
                             <v-text-field v-model="element.date" label="date" type="date" hide-details/>
                         </v-col>
                         <v-col cols="12">
-                            <v-text-field v-model="element.url" label="url" hide-details/>
+                            <v-textarea v-model="element.reference" label="reference" hide-details/>
                         </v-col>
                     </v-row>
                 </v-col>
@@ -40,13 +51,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ResumeCertificate } from '@/types/resume'
+import { ResumeReference } from '@/types/resume'
 import { ref, computed } from 'vue'
 import type { PropType } from 'vue'
 import draggable from 'vuedraggable'
+import placeholder from '@/assets/image-placeholder.png'
 
 const props = defineProps({
-    modelValue: {type: Array as PropType<ResumeCertificate[] | undefined>, required: true},
+    modelValue: {type: Array as PropType<ResumeReference[] | undefined>, required: true},
     addItem: {type: Function, required: true},
     removeItem: {type: Function, required: true}
 })

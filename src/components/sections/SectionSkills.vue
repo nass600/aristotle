@@ -33,7 +33,7 @@ defineProps({
                         </div>
                     </div>
                     <div class="icon-item mt-1" v-if="item.keywords">
-                        <ov-icon class="primary mr-2" :scale="0.75" name="la-tags-solid"/>
+                        <ov-icon class="primary" :scale="0.75" name="la-tags-solid"/>
                         <small class="secondary">{{ item.keywords.join(', ') }}</small>
                     </div>
                 </li>

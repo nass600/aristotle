@@ -1,20 +1,20 @@
 <script setup lang="ts">
 defineProps({
-    name: {type: String, required: true},
-    background: String,
-    picture: String,
-    label: String,
+    name: {type: String, required: false},
+    background: {type: String, required: false},
+    picture: {type: String, required: false},
+    label: {type: String, required: false},
 })
 </script>
 
 <template>
     <section class="section-basic" :style="`background-image: url('${background}');`">
         <div class="section-body">
-            <div v-if="picture" class="avatar mx-auto my-4">
+            <div v-if="picture" class="avatar mx-auto mb-4">
                 <img :src="picture" :alt="name">
             </div>
-            <h1 class="name mt-0 mb-4 primary" v-html="name"></h1>
-            <h1 class="label mb-4" v-html="label"></h1>
+            <h1 class="name mt-0 mb-4 primary text-uppercase" v-html="name"></h1>
+            <h1 class="label text-uppercase" v-html="label"></h1>
         </div>
     </section>
 </template>

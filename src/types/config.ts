@@ -5,12 +5,34 @@ export enum Theme {
 }
 
 export enum SectionName {
+    BASICS = 'BASICS',
+    CONTACT = 'CONTACT',
+    SOCIAL = 'SOCIAL',
+    SKILLS = 'SKILLS',
+    EXPERTISE = 'EXPERTISE',
+    TECHNICAL_SKILLS = 'TECHNICAL_SKILLS',
+    SOFT_SKILLS = 'SOFT_SKILLS',
+    LANGUAGES = 'LANGUAGES',
+    AWARDS = 'AWARDS',
+    PUBLICATIONS = 'PUBLICATIONS',
+    CERTIFICATES = 'CERTIFICATES',
+    INTERESTS = 'INTERESTS',
+    SUMMARY = 'SUMMARY',
+    WORK = 'WORK',
+    EDUCATION = 'EDUCATION',
+    VOLUNTEER = 'VOLUNTEER',
+    PROJECTS = 'PROJECTS',
+    REFERENCES = 'REFERENCES',
+}
+
+export enum SectionComponent {
+    BASICS = 'basics',
     CONTACT = 'contact',
     SOCIAL = 'social',
     SKILLS = 'skills',
-    EXPERTISE = 'expertise',
-    TECHNICAL_SKILLS = 'technicalSkills',
-    SOFT_SKILLS = 'softSkills',
+    EXPERTISE = 'skills',
+    TECHNICAL_SKILLS = 'skills',
+    SOFT_SKILLS = 'skills',
     LANGUAGES = 'languages',
     AWARDS = 'awards',
     PUBLICATIONS = 'publications',
@@ -19,4 +41,7 @@ export enum SectionName {
     SUMMARY = 'summary',
     WORK = 'work',
     EDUCATION = 'education',
+    VOLUNTEER = 'volunteer',
+    PROJECTS = 'projects',
+    REFERENCES = 'references',
 }

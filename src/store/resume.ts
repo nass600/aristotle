@@ -1,14 +1,12 @@
 import { defineStore } from 'pinia'
-import { ResumeSocialNetworkName, type Resume, type ResumeProfile, type ResumeWork, ResumeLanguage, ResumeLanguageName } from '@/types/resume'
+import { ResumeSocialNetworkName, type Resume, type ResumeProfile, type ResumeWork, ResumeLanguage, ResumeLanguageName, ResumeEducation } from '@/types/resume'
 
 export const useResumeStore = defineStore('resume', {
     persist: true,
     state: (): Resume => ({
         basics: {
             name: '',
-            email: '',
             label: '',
-            phone: '',
             location: {},
             profiles: []
         },
@@ -23,15 +21,24 @@ export const useResumeStore = defineStore('resume', {
         languages: [],
         awards: [],
         interests: [],
+        volunteer: [],
+        projects: [],
+        references: [],
     }),
     getters: {
         availableSocialNetworks: (state: Resume): string[] => {
             const usedNetworks = state.basics.profiles?.map((profile: ResumeProfile) => profile.network.toUpperCase())
-            return Object.keys(ResumeSocialNetworkName).filter((profile: string) => !usedNetworks?.includes(profile.toUpperCase()))
+            return Object
+                .keys(ResumeSocialNetworkName)
+                .filter((profile: string) => !usedNetworks?.includes(profile.toUpperCase()))
+                .sort((a, b) => a > b ? 1 : -1)
         },
         availableLanguages: (state: Resume): string[] => {
             const usedLanguages = state.languages?.map((language: ResumeLanguage) => language.language.toLowerCase())
-            return Object.keys(ResumeLanguageName).filter((language: string) => !usedLanguages?.includes(language.toLowerCase()))
+            return Object
+                .keys(ResumeLanguageName)
+                .filter((language: string) => !usedLanguages?.includes(language.toLowerCase()))
+                .sort((a, b) => a > b ? 1 : -1)
         },
         groupedJobs: (state: Resume): (ResumeWork | ResumeWork[])[] | undefined => {
             const groups = []
@@ -41,12 +48,12 @@ export const useResumeStore = defineStore('resume', {
                 return state.work
             }
 
-            for (const job of state.work) {
-                if (job.company !== lastKey) {
-                    groups.push([job])
-                    lastKey = job.company
+            for (const item of state.work) {
+                if (item.name !== lastKey) {
+                    groups.push([item])
+                    lastKey = item.name
                 } else {
-                    groups[groups.length - 1].push(job)
+                    groups[groups.length - 1].push(item)
                 }
             }
 
@@ -57,48 +64,81 @@ export const useResumeStore = defineStore('resume', {
                     return group[0]
                 }
             })
+        },
+        groupedEducation: (state: Resume): (ResumeEducation | ResumeEducation[])[] | undefined => {
+            const groups = []
+            let lastKey = undefined
+
+            if (!state.education) {
+                return state.education
+            }
+
+            for (const item of state.education) {
+                if (item.institution !== lastKey) {
+                    groups.push([item])
+                    lastKey = item.institution
+                } else {
+                    groups[groups.length - 1].push(item)
+                }
+            }
+
+            return groups.map((group: ResumeEducation[]) => {
+                if (group.length > 1) {
+                    return group
+                } else {
+                    return group[0]
+                }
+            })
         }
     },
     actions: {
-        addSocialProfile (network: ResumeSocialNetworkName) {
+        addSocial (network: ResumeSocialNetworkName) {
             if (!this.basics.profiles) {
                 this.basics.profiles = []
             }
 
             this.basics.profiles?.push({network, username: '', url: ''})
         },
-        addSkill (name: string) {
-            this.skills?.push({name, level: ''})
+        addSkills () {
+            this.skills?.push({name: '', level: ''})
         },
-        addExpertise (name: string) {
-            this.expertise?.push({name, level: ''})
+        addExpertise () {
+            this.expertise?.push({name: '', level: ''})
         },
-        addTechnicalSkill (name: string) {
-            this.technicalSkills?.push({name, level: ''})
+        addTechnicalSkills () {
+            this.technicalSkills?.push({name: '', level: ''})
         },
-        addSoftSkill (name: string) {
-            this.softSkills?.push({name, level: ''})
+        addSoftSkills () {
+            this.softSkills?.push({name: '', level: ''})
         },
-        addEducation (institution: string) {
-            this.education?.push({institution, studyType: '', startDate: '', courses: ['']})
+        addEducation () {
+            this.education?.push({institution: '', area: '', startDate: '', courses: []})
         },
-        addWork (position: string) {
-            this.work?.push({position, company: '', startDate: '', summary: ['']})
+        addWork () {
+            this.work?.push({position: '', name: '', startDate: '', summary: []})
         },
-        addAward (title: string) {
-            this.awards?.push({title, awarder: '', date: ''})
+        addAwards () {
+            this.awards?.push({title: '', awarder: '', date: ''})
         },
-        addCertificate (name: string) {
-            this.certificates?.push({name, issuer: '', date: ''})
+        addCertificates () {
+            this.certificates?.push({name: '', issuer: '', date: ''})
         },
-        addPublication (name: string) {
-            this.publications?.push({name, publisher: '', releaseDate: ''})
+        addVolunteer () {
+            this.volunteer?.push({position: '', organization: '', startDate: '', summary: []})
         },
-        addInterest (name: string) {
-            this.interests?.push({name})
+        addReferences () {
+            this.references?.push({name: '', reference: '', date: ''})
         },
-        addLanguage (language: string) {
-            console.log('addlanguage', language)
+        addProjects () {
+            this.projects?.push({name: '', startDate: '', summary: []})
+        },
+        addPublications () {
+            this.publications?.push({name: '', publisher: '', releaseDate: ''})
+        },
+        addInterests () {
+            this.interests?.push({name: ''})
+        },
+        addLanguages (language: string) {
             this.languages?.push({language})
         },
         load (resume: Resume) {
@@ -114,6 +154,9 @@ export const useResumeStore = defineStore('resume', {
             this.languages = resume.languages || []
             this.awards = resume.awards || []
             this.interests = resume.interests || []
+            this.volunteer = resume.volunteer || []
+            this.projects = resume.projects || []
+            this.references = resume.references || []
         }
     }
 })

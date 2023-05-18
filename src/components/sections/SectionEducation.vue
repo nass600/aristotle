@@ -7,7 +7,7 @@ import ResumeCard from '@/components/ResumeCard.vue'
 defineProps({
     title: {type: String, required: false, default: 'Education'},
     icon: {type: String, required: false, default: 'la-book-solid'},
-    items: {type: Array as PropType<ResumeEducation[]>, required: true},
+    items: {type: Array as PropType<(ResumeEducation | ResumeEducation[])[]>, required: true},
     displayBody: {type: Boolean, required: false, default: true},
     displayDuration: {type: Boolean, required: false, default: true}
 })
@@ -17,21 +17,43 @@ defineProps({
     <section class="section-education">
         <section-title :title="title" :icon="icon"/>
         <div class="section-body section-body-cards">
-            <ul class="education">
+            <template v-for="item, i in items" v-bind:key="`education-${i}`">
+                <div class="card-group" v-if="Array.isArray(item)">
+                    <resume-card
+                        :class="{'card-last': i === item.length - 1}"
+                        v-for="child, i in item"
+                        v-bind:key="`study-${i}`"
+                        :logo="child.logo"
+                        :pre-title="child.studyType"
+                        :title="child.area"
+                        :subtitle="child.institution"
+                        :start-date="child.startDate"
+                        :end-date="child.endDate"
+                        :body="child.courses"
+                        :score="child.score"
+                        :link="child.url"
+                        :display-current="true"
+                        :display-body="displayBody"
+                        :display-duration="displayDuration"
+                    />
+                </div>
+
                 <resume-card
-                    v-for="item, i in items" v-bind:key="`education-${i}`"
+                    v-if="!Array.isArray(item)"
                     :logo="item.logo"
-                    :title="item.studyType"
+                    :pre-title="item.studyType"
+                    :title="item.area"
                     :subtitle="item.institution"
                     :start-date="item.startDate"
                     :end-date="item.endDate"
-                    :link="item.url"
                     :body="item.courses"
+                    :score="item.score"
+                    :link="item.url"
                     :display-current="true"
                     :display-body="displayBody"
                     :display-duration="displayDuration"
                 />
-            </ul>
+            </template>
         </div>
     </section>
 </template>

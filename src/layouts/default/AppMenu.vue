@@ -37,6 +37,11 @@ const tabs = [
 <style lang="scss">
     @use '@/styles/settings.scss';
 
+    .v-card-text {
+        overflow-y: auto;
+        height: 100%;
+    }
+
     .app-menu-container {
         display: flex;
         flex-direction: column;

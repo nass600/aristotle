@@ -35,7 +35,7 @@
                 v-for="panel, i in panels"
                 v-bind:key="`section-${i}`"
             >
-                <v-container>
+                <v-container class="h-100">
                     <v-row>
                         <v-col cols="12" class="subtitle rounded-lg mb-4">
                             <p class="text-body-1 d-flex align-center text-primary">
@@ -44,9 +44,9 @@
                             </p>
                         </v-col>
                     </v-row>
-                    <v-row>
+                    <v-row class="h-100">
                         <draggable
-                            class="v-container px-0"
+                            class="v-container px-0 h-100"
                             ghost-class="ghost-row"
                             :list="panel.model"
                             group="sections"
@@ -134,13 +134,6 @@ const blanks = computed({
 </script>
 
 <style lang="scss">
-    @use '@/styles/settings.scss';
-
-    .v-card-text {
-        overflow-y: auto;
-        height: 100%;
-    }
-
     .subtitle {
         border: 1px solid rgb(var(--v-theme-primary));
     }

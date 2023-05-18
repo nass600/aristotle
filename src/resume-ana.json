@@ -1,219 +1,219 @@
 {
-    "basics": {
-        "name": "Ana Mata Llorente",
-        "picture": "https://media.licdn.com/dms/image/C5603AQFOBby9JSlBFw/profile-displayphoto-shrink_800_800/0/1613592721632?e=1688601600&v=beta&t=bYxm5L-3rTPeQq1ixFik8pA3Y5esxNOpqWt4S31z05M",
-        "email": "ana.matallorente@gmail.com",
-        "label": "Industrial Engineer",
-        "phone": "+34 629 426 737",
-        "summary": "<p>Como ingeniero versátil, con pasión por la innovación y la tecnología, he trabajado 6+ años impulsando la calidad y la eficiencia a través de metodologías lean, liderando equipos multidisciplinares y gestionando proyectos 4+ años en varias etapas de desarrollo.</p>",
-        "location": {
-            "city": "Valladolid,",
-            "countryCode": "Spain"
-        },
-        "profiles": [
-            {
-                "network": "Skype",
-                "username": "amatall",
-                "url": "@amatall"
-            },
-            {
-                "network": "Linkedin",
-                "username": "amatall",
-                "url": "https://linkedin.com/in/amatall"
-            }
-        ]
+  "basics": {
+    "name": "Ana Mata Llorente",
+    "picture": "https://media.licdn.com/dms/image/C5603AQFOBby9JSlBFw/profile-displayphoto-shrink_800_800/0/1613592721632?e=1688601600&v=beta&t=bYxm5L-3rTPeQq1ixFik8pA3Y5esxNOpqWt4S31z05M",
+    "email": "ana.matallorente@gmail.com",
+    "label": "Industrial Engineer",
+    "phone": "+34 629 426 737",
+    "summary": "<p>Como ingeniero versátil, con pasión por la innovación y la tecnología, he trabajado 6+ años impulsando la calidad y la eficiencia a través de metodologías lean, liderando equipos multidisciplinares y gestionando proyectos 4+ años en varias etapas de desarrollo.</p>",
+    "location": {
+      "city": "Valladolid,",
+      "countryCode": "Spain"
     },
-    "work": [
-        [
-            {
-                "company": "Groupe Renault",
-                "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
-                "position": "Senior Project Engineer",
-                "url": "https://www.renaultgroup.com/en/",
-                "startDate": "2022-11-01",
-                "summary": "Gestionar y definir técnicamente el desarrollo, industrialización y seguimiento de sistemas industriales de control por visión basados en Deep Learning, así como su control de calidad y plan de validación.|Garantizar el correcto arranque, explotación y mantenimiento del sistema industrial y consiguiente lanzamiento de nuevos productos con un incremento del performance y fiabilidad del 35% y 42% respectivamente."
-            },
-            {
-                "company": "Groupe Renault",
-                "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
-                "position": "Process Designer",
-                "startDate": "2021-11-01",
-                "endDate": "2022-11-01",
-                "summary": "Gestionar la definición y modificaciones de producto-proceso HPDC de aluminio trabajando con los clientes y las partes interesadas para definir los requisitos y funcionalidad de moldes para maximizar la eficiencia operacional.|Realizar el prototipado y evaluar la complejidad, viabilidad, coste y planificación del producto negociando los cambios oportunos.|Planificación estratégica, gestión de riesgos, priorización, instalación, integración, documentación, puesta en servicio, calibración y pruebas, validación y garantía de calidad y rendimiento en el tiempo."
-            },
-            {
-                "company": "Groupe Renault",
-                "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
-                "position": "Technical Lead",
-                "startDate": "2019-11-01",
-                "endDate": "2021-11-01",
-                "summary": "Gestionar el contrato del proyecto como responsable de la definición del proceso (DFM) de mecanizado e inspección óptica (instalaciones y maquinaria industrial).|Liderar equipos internacionales de 10-20 técnicos, entregando proyectos escalables de más de 15M €, animación de proveedores.|Analizar y calcular posibles mejoras proceso mediante análisis de datos, investigación y ensayos, optimizando el tiempo de ciclo en un 14% y reduciendo el desperdicio de herramientas en un 70%.|Detectar potenciales oportunidades para satisfacer las necesidades de producción actuales y futuras estimando su impacto y rentabilidad QCDP, alineadas con la estrategia de la empresa."
-            },
-            {
-                "company": "Groupe Renault",
-                "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
-                "position": "Process Engineer",
-                "startDate": "2018-11-01",
-                "endDate": "2019-11-01",
-                "summary": "Coordinar el trabajo transversal, los objetivos y planificación del proyecto con el resto de áreas de la empresa: compras, logística, calidad, producción y empresas internacionales subcontratadas.|Seguimiento y corrección de problemas in situ y asistencia técnica a otros departamentos para reducir disconformidades y paradas inesperadas.|Colaboración con todos los líderes técnicos del Grupo en charlas técnicas internas para lograr las mejores prácticas a través de I + D."
-            }
-        ],
-        {
-            "company": "Inse Rail",
-            "logo": "https://pbs.twimg.com/profile_images/1039465787864637440/Dokw5i1q_400x400.jpg",
-            "position": "Ingeniero de Proyectos",
-            "url": "https://inserail.es/en/",
-            "startDate": "2015-08-01",
-            "endDate": "2016-10-01",
-            "summary": "Diseñar y desarrollar proyectos internacionales asegurando calidad, coste y tiempo, para diferentes empresas (Adif, Siemens, Thales) a lo largo del ciclo de vida del proyecto.|Establecer relaciones sólidas entre todas las partes interesadas (internas, proveedores, clientes) para conseguir el resultado más favorable.|Satisfacer la normativa y los requisitos de los clientes para poder responder a la demanda.|Brindar capacitación interna y perfeccionamiento en tecnologías punta."
-        },
-        {
-            "company": "Reydel Automotive",
-            "logo": "https://media.licdn.com/dms/image/C560BAQHIF5Uzj1ANMw/company-logo_200_200/0/1519869813616?e=2147483647&v=beta&t=JVVGk6cjJesbZi6TAKfax29hROgPbtdy48Sq1rNpZOY",
-            "position": "Ingeniero Lean Manufacturing",
-            "url": "http://www.reydel.com/",
-            "startDate": "2015-01-01",
-            "endDate": "2015-08-01",
-            "summary": "Analizar el proceso de fabricación actual, monitoreando y controlando KPIs (Downtime, eficiencia, desperdicio, WIP, etc.); logrando la reducción del tiempo de cambio de molde SMED en un 15% para permitir un aumento de la producción para diferentes clientes como Renault, Volkswagen y Grupo PSA entre otros.|Ejecución de metodologías lean (VSM, SMED y FMEA).|Estandarizar formas de trabajo y formar e implicar a los trabajadores para apoyar los objetivos de la empresa.|Fomento de la cooperación interdepartamental."
-        }
-    ],
-    "education": [
-        {
-            "institution": "Escuela de Ingenierias Industriales, Valladolid, Spain",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logotipo_de_la_Universidad_de_Valladolid.svg/2041px-Logotipo_de_la_Universidad_de_Valladolid.svg.png",
-            "area": "",
-            "studyType": "Ingeniero Industrial",
-            "startDate": "2011-09-01",
-            "endDate": "2014-12-01"
-        },
-        {
-            "institution": "Escuela de Ingenierias Industriales, Valladolid, Spain",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logotipo_de_la_Universidad_de_Valladolid.svg/2041px-Logotipo_de_la_Universidad_de_Valladolid.svg.png",
-            "area": "",
-            "studyType": "Ingeniero Técnico Industrial Esp. en Electrónica Industrial",
-            "startDate": "2004-09-01",
-            "endDate": "2011-07-01"
-        }
-    ],
-    "certificates": [
-        {
-            "name": "International Advanced Programme",
-            "issuer": "Swan Training Institute, Dublin, Ireland",
-            "date": "2016-09-01",
-            "url": "https://selt.ie/"
-        },
-        {
-            "name": "Upper-Intermmediate Level Intensive Course Of English",
-            "issuer": "Cambridge House",
-            "date": "2016-10-01",
-            "url": "https://www.cambridgehouse.es/en/"
-        },
-        {
-            "name": "Intermmediate Level Course Of German",
-            "issuer": "Goethe Institut, Munich, Germany",
-            "date": "2009-07-01",
-            "url": "https://www.goethe.de"
-        },
-        {
-            "name": "Certified Six Sigma Black Belt",
-            "issuer": "Six Sigma",
-            "date": "2020-03-01",
-            "url": "https://bit.ly/3a0suBA"
-        },
-        {
-            "name": "Superfinishing Process Training",
-            "issuer": "NAGEL Maschinen und Werkzeugfabrik, Cleon, France",
-            "date": "2019-06-01"
-        },
-        {
-            "name": "Vision Software Training",
-            "issuer": "JENOPTIK Industrial Metrology Germany GmbH., Sttutgart, Germany",
-            "date": "2019-08-01"
-        },
-        {
-            "name": "Certified Lean Management",
-            "issuer": "Sigma Academy Amsterdam",
-            "date": "2017-07-01"
-        }
-    ],
-    "expertise": [
-        {
-            "name": "Gestión de proyectos / equipos"
-        },
-        {
-            "name": "R&D"
-        },
-        {
-            "name": "Análisis de datos"
-        },
-        {
-            "name": "Relación con Clientes/Proveedores"
-        },
-        {
-            "name": "Mejora continua de procesos"
-        },
-        {
-            "name": "Definición de ensayos/Validación"
-        }
-    ],
-    "technicalSkills": [
-        {
-            "name": "In-Sight /VisionPro VIDI"
-        },
-        {
-            "name": "SIMATIC STEP 7 / TIA Portal"
-        },
-        {
-            "name": "CATIA V5"
-        },
-        {
-            "name": "AutoCAD"
-        },
-        {
-            "name": "SolidWorks"
-        },
-        {
-            "name": "LabVIEW"
-        },
-        {
-            "name": "Matlab"
-        },
-        {
-            "name": "Programación PLCs"
-        },
-        {
-            "name": "Arduino"
-        },
-        {
-            "name": "Programación C"
-        },
-        {
-            "name": "MS Project"
-        }
-    ],
-    "softSkills": [
-        {
-            "name": "Resolución de problemas"
-        },
-        {
-            "name": "Negociación"
-        },
-        {
-            "name": "Comunicación"
-        }
-    ],
-    "languages": [
-        {
-            "language": "English",
-            "fluency": "Fluent|C1: TOEIC Score 990 (2022)|B2: Cambridge FCE (2017)"
-        },
-        {
-            "language": "German",
-            "fluency": "Basic"
-        },
-        {
-            "language": "Spanish",
-            "fluency": "Native"
-        }
+    "profiles": [
+      {
+        "network": "Skype",
+        "username": "amatall",
+        "url": "@amatall"
+      },
+      {
+        "network": "Linkedin",
+        "username": "amatall",
+        "url": "https://linkedin.com/in/amatall"
+      }
     ]
+  },
+  "work": [
+    [
+      {
+        "name": "Groupe Renault",
+        "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
+        "position": "Senior Project Engineer",
+        "url": "https://www.renaultgroup.com/en/",
+        "startDate": "2022-11-01",
+        "summary": "Gestionar y definir técnicamente el desarrollo, industrialización y seguimiento de sistemas industriales de control por visión basados en Deep Learning, así como su control de calidad y plan de validación.|Garantizar el correcto arranque, explotación y mantenimiento del sistema industrial y consiguiente lanzamiento de nuevos productos con un incremento del performance y fiabilidad del 35% y 42% respectivamente."
+      },
+      {
+        "name": "Groupe Renault",
+        "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
+        "position": "Process Designer",
+        "startDate": "2021-11-01",
+        "endDate": "2022-11-01",
+        "summary": "Gestionar la definición y modificaciones de producto-proceso HPDC de aluminio trabajando con los clientes y las partes interesadas para definir los requisitos y funcionalidad de moldes para maximizar la eficiencia operacional.|Realizar el prototipado y evaluar la complejidad, viabilidad, coste y planificación del producto negociando los cambios oportunos.|Planificación estratégica, gestión de riesgos, priorización, instalación, integración, documentación, puesta en servicio, calibración y pruebas, validación y garantía de calidad y rendimiento en el tiempo."
+      },
+      {
+        "name": "Groupe Renault",
+        "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
+        "position": "Technical Lead",
+        "startDate": "2019-11-01",
+        "endDate": "2021-11-01",
+        "summary": "Gestionar el contrato del proyecto como responsable de la definición del proceso (DFM) de mecanizado e inspección óptica (instalaciones y maquinaria industrial).|Liderar equipos internacionales de 10-20 técnicos, entregando proyectos escalables de más de 15M €, animación de proveedores.|Analizar y calcular posibles mejoras proceso mediante análisis de datos, investigación y ensayos, optimizando el tiempo de ciclo en un 14% y reduciendo el desperdicio de herramientas en un 70%.|Detectar potenciales oportunidades para satisfacer las necesidades de producción actuales y futuras estimando su impacto y rentabilidad QCDP, alineadas con la estrategia de la empresa."
+      },
+      {
+        "name": "Groupe Renault",
+        "logo": "https://firebounty.com/image/2794-vulnerability-disclosure-policy-groupe-renault",
+        "position": "Process Engineer",
+        "startDate": "2018-11-01",
+        "endDate": "2019-11-01",
+        "summary": "Coordinar el trabajo transversal, los objetivos y planificación del proyecto con el resto de áreas de la empresa: compras, logística, calidad, producción y empresas internacionales subcontratadas.|Seguimiento y corrección de problemas in situ y asistencia técnica a otros departamentos para reducir disconformidades y paradas inesperadas.|Colaboración con todos los líderes técnicos del Grupo en charlas técnicas internas para lograr las mejores prácticas a través de I + D."
+      }
+    ],
+    {
+      "name": "Inse Rail",
+      "logo": "https://pbs.twimg.com/profile_images/1039465787864637440/Dokw5i1q_400x400.jpg",
+      "position": "Ingeniero de Proyectos",
+      "url": "https://inserail.es/en/",
+      "startDate": "2015-08-01",
+      "endDate": "2016-10-01",
+      "summary": "Diseñar y desarrollar proyectos internacionales asegurando calidad, coste y tiempo, para diferentes empresas (Adif, Siemens, Thales) a lo largo del ciclo de vida del proyecto.|Establecer relaciones sólidas entre todas las partes interesadas (internas, proveedores, clientes) para conseguir el resultado más favorable.|Satisfacer la normativa y los requisitos de los clientes para poder responder a la demanda.|Brindar capacitación interna y perfeccionamiento en tecnologías punta."
+    },
+    {
+      "name": "Reydel Automotive",
+      "logo": "https://media.licdn.com/dms/image/C560BAQHIF5Uzj1ANMw/company-logo_200_200/0/1519869813616?e=2147483647&v=beta&t=JVVGk6cjJesbZi6TAKfax29hROgPbtdy48Sq1rNpZOY",
+      "position": "Ingeniero Lean Manufacturing",
+      "url": "http://www.reydel.com/",
+      "startDate": "2015-01-01",
+      "endDate": "2015-08-01",
+      "summary": "Analizar el proceso de fabricación actual, monitoreando y controlando KPIs (Downtime, eficiencia, desperdicio, WIP, etc.); logrando la reducción del tiempo de cambio de molde SMED en un 15% para permitir un aumento de la producción para diferentes clientes como Renault, Volkswagen y Grupo PSA entre otros.|Ejecución de metodologías lean (VSM, SMED y FMEA).|Estandarizar formas de trabajo y formar e implicar a los trabajadores para apoyar los objetivos de la empresa.|Fomento de la cooperación interdepartamental."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Escuela de Ingenierias Industriales, Valladolid, Spain",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logotipo_de_la_Universidad_de_Valladolid.svg/2041px-Logotipo_de_la_Universidad_de_Valladolid.svg.png",
+      "area": "",
+      "studyType": "Ingeniero Industrial",
+      "startDate": "2011-09-01",
+      "endDate": "2014-12-01"
+    },
+    {
+      "institution": "Escuela de Ingenierias Industriales, Valladolid, Spain",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logotipo_de_la_Universidad_de_Valladolid.svg/2041px-Logotipo_de_la_Universidad_de_Valladolid.svg.png",
+      "area": "",
+      "studyType": "Ingeniero Técnico Industrial Esp. en Electrónica Industrial",
+      "startDate": "2004-09-01",
+      "endDate": "2011-07-01"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "International Advanced Programme",
+      "issuer": "Swan Training Institute, Dublin, Ireland",
+      "date": "2016-09-01",
+      "url": "https://selt.ie/"
+    },
+    {
+      "name": "Upper-Intermmediate Level Intensive Course Of English",
+      "issuer": "Cambridge House",
+      "date": "2016-10-01",
+      "url": "https://www.cambridgehouse.es/en/"
+    },
+    {
+      "name": "Intermmediate Level Course Of German",
+      "issuer": "Goethe Institut, Munich, Germany",
+      "date": "2009-07-01",
+      "url": "https://www.goethe.de"
+    },
+    {
+      "name": "Certified Six Sigma Black Belt",
+      "issuer": "Six Sigma",
+      "date": "2020-03-01",
+      "url": "https://bit.ly/3a0suBA"
+    },
+    {
+      "name": "Superfinishing Process Training",
+      "issuer": "NAGEL Maschinen und Werkzeugfabrik, Cleon, France",
+      "date": "2019-06-01"
+    },
+    {
+      "name": "Vision Software Training",
+      "issuer": "JENOPTIK Industrial Metrology Germany GmbH., Sttutgart, Germany",
+      "date": "2019-08-01"
+    },
+    {
+      "name": "Certified Lean Management",
+      "issuer": "Sigma Academy Amsterdam",
+      "date": "2017-07-01"
+    }
+  ],
+  "expertise": [
+    {
+      "name": "Gestión de proyectos / equipos"
+    },
+    {
+      "name": "R&D"
+    },
+    {
+      "name": "Análisis de datos"
+    },
+    {
+      "name": "Relación con Clientes/Proveedores"
+    },
+    {
+      "name": "Mejora continua de procesos"
+    },
+    {
+      "name": "Definición de ensayos/Validación"
+    }
+  ],
+  "technicalSkills": [
+    {
+      "name": "In-Sight /VisionPro VIDI"
+    },
+    {
+      "name": "SIMATIC STEP 7 / TIA Portal"
+    },
+    {
+      "name": "CATIA V5"
+    },
+    {
+      "name": "AutoCAD"
+    },
+    {
+      "name": "SolidWorks"
+    },
+    {
+      "name": "LabVIEW"
+    },
+    {
+      "name": "Matlab"
+    },
+    {
+      "name": "Programación PLCs"
+    },
+    {
+      "name": "Arduino"
+    },
+    {
+      "name": "Programación C"
+    },
+    {
+      "name": "MS Project"
+    }
+  ],
+  "softSkills": [
+    {
+      "name": "Resolución de problemas"
+    },
+    {
+      "name": "Negociación"
+    },
+    {
+      "name": "Comunicación"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent|C1: TOEIC Score 990 (2022)|B2: Cambridge FCE (2017)"
+    },
+    {
+      "language": "German",
+      "fluency": "Basic"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    }
+  ]
 }
