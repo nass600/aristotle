@@ -24,6 +24,7 @@ defineProps({
                 :start-date="item.startDate"
                 :end-date="item.endDate"
                 :body="item.summary"
+                :location="item.location"
                 :link="item.url"
                 :tags="item.highlights"
                 :display-duration="displayDuration"

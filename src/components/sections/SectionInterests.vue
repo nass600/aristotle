@@ -31,9 +31,7 @@ defineProps({
 <style lang="scss">
 .section-interests {
     .interest {
-        & + .interest {
-            margin-top: calc(var(--spacer) * 0.5);
-        }
+        padding: calc(var(--spacer) * 0.5);
     }
 }
 </style>

@@ -19,11 +19,12 @@ defineProps({
             <resume-card
                 v-for="item, i in items"
                 v-bind:key="`certificate-${i}`"
+                :logo="item.picture"
                 :title="item.name"
                 :subtitle="item.position"
                 :start-date="item.date"
                 :end-date="null"
-                :body="item.reference"
+                :quote="item.reference"
                 :display-duration="displayDuration"
             />
         </div>

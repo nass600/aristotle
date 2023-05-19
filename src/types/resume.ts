@@ -125,6 +125,7 @@ export interface ResumeWork {
     name: string;
     logo?: string;
     position: string;
+    location?: string;
     url?: string;
     startDate: string;
     endDate?: string;
@@ -145,6 +146,7 @@ export interface ResumeVolunteer {
     organization: string;
     logo?: string;
     position: string;
+    location?: string;
     url?: string;
     startDate: string;
     endDate?: string;
@@ -156,6 +158,7 @@ export interface ResumeEducation {
     institution: string;
     studyType?: string;
     area: string;
+    location?: string;
     url?: string;
     logo?: string;
     startDate: string;

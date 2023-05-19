@@ -11,8 +11,8 @@ const config = useConfigStore()
     >
         <div class="sidebar">
             <component
-                v-for="section, i in config.renderSections.sidebar"
-                v-bind:key="`sidebar-section-${i}`"
+                v-for="section in config.renderSections.sidebar"
+                v-bind:key="`render-section-${section.name.toLowerCase()}`"
                 :is="`section-${section.component}`"
                 :title="section.title"
                 :icon="section.icon"
@@ -21,8 +21,8 @@ const config = useConfigStore()
         </div>
         <div class="content">
             <component
-                v-for="section, i in config.renderSections.main"
-                v-bind:key="`main-section-${i}`"
+                v-for="section in config.renderSections.main"
+                v-bind:key="`render-section-${section.name.toLowerCase()}`"
                 :is="`section-${section.component}`"
                 :title="section.title"
                 :icon="section.icon"
@@ -113,6 +113,7 @@ const config = useConfigStore()
     .icon-item {
         display: flex;
         align-items: center;
+        margin: calc(var(--spacer) * 0.5);
 
         .ov-icon,
         .v-icon {
@@ -125,8 +126,8 @@ const config = useConfigStore()
             min-width: 0;
         }
 
-        & + .icon-item {
-            margin-top: calc(var(--spacer) * 0.25);
+        & > .icon-item {
+            margin: 0;
         }
     }
 
@@ -215,7 +216,7 @@ const config = useConfigStore()
 
     [class^="section-"] {
         .section-body {
-            padding: var(--spacer);
+            padding: calc(var(--spacer) * 0.5);
             margin: 0;
         }
         .section-body-cards {
@@ -231,6 +232,9 @@ const config = useConfigStore()
     }
     .tertiary {
         color: var(--color-tertiary);
+    }
+    .bg-tertiary {
+        background-color: var(--color-tertiary);
     }
 }
 

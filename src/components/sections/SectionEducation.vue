@@ -3,21 +3,23 @@ import type { PropType } from 'vue'
 import type { ResumeEducation } from '@/types/resume'
 import SectionTitle from '@/components/SectionTitle.vue'
 import ResumeCard from '@/components/ResumeCard.vue'
+import { useResumeStore } from '@/store/resume'
 
 defineProps({
     title: {type: String, required: false, default: 'Education'},
     icon: {type: String, required: false, default: 'la-book-solid'},
-    items: {type: Array as PropType<(ResumeEducation | ResumeEducation[])[]>, required: true},
+    items: {type: Array as PropType<ResumeEducation[]>, required: true},
     displayBody: {type: Boolean, required: false, default: true},
     displayDuration: {type: Boolean, required: false, default: true}
 })
+const resume = useResumeStore()
 </script>
 
 <template>
     <section class="section-education">
         <section-title :title="title" :icon="icon"/>
         <div class="section-body section-body-cards">
-            <template v-for="item, i in items" v-bind:key="`education-${i}`">
+            <template v-for="item, i in resume.groupedEducation" v-bind:key="`education-${i}`">
                 <div class="card-group" v-if="Array.isArray(item)">
                     <resume-card
                         :class="{'card-last': i === item.length - 1}"
@@ -31,6 +33,7 @@ defineProps({
                         :end-date="child.endDate"
                         :body="child.courses"
                         :score="child.score"
+                        :location="child.location"
                         :link="child.url"
                         :display-current="true"
                         :display-body="displayBody"
@@ -48,6 +51,7 @@ defineProps({
                     :end-date="item.endDate"
                     :body="item.courses"
                     :score="item.score"
+                    :location="item.location"
                     :link="item.url"
                     :display-current="true"
                     :display-body="displayBody"

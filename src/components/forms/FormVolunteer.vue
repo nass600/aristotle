@@ -44,6 +44,9 @@
                             </v-row>
                         </v-col>
                         <v-col cols="12">
+                            <v-text-field v-model="element.location" label="location" hide-details/>
+                        </v-col>
+                        <v-col cols="12">
                             <v-text-field v-model="element.url" label="url" hide-details/>
                         </v-col>
                         <v-col cols="12">

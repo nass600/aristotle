@@ -12,9 +12,11 @@ const props = defineProps({
     startDate: {type: String, required: true},
     endDate: {type: String as PropType<string | null>, required: false},
     body: {type: [Array, String] as PropType<string[] | string>, required: false},
-    score: String,
-    link: String,
-    tags: Array as PropType<string[]>,
+    quote: {type: String, required: false},
+    score: {type: String, required: false},
+    location: {type: String, required: false},
+    link: {type: String, required: false},
+    tags: {type: Array as PropType<string[]>, required: false},
     displayDuration: {type: Boolean, required: false, default: true},
     displayCurrent: {type: Boolean, required: false, default: false},
     displayBody: {type: Boolean, required: false, default: true},
@@ -68,14 +70,27 @@ const duration = computed(() => {
                 <small v-if="startDate && !endDate && displayCurrent" class="card-badge">current</small>
             </div>
             <template v-if="body && displayBody">
-                <div class="card-body" v-if="!Array.isArray(body)" v-html="body"></div>
+                <div class="card-body" v-if="!Array.isArray(body)">
+                    <span v-html="body"></span>
+                </div>
                 <div class="card-body" v-if="Array.isArray(body) && body.length > 0">
                     <ul>
                         <li v-for="item, i in body" v-bind:key="`body-${i}`" v-html="item"></li>
                     </ul>
                 </div>
             </template>
-            <div v-if="link || tags" class="card-footer">
+            <div
+                v-if="link || tags || quote || location"
+                :class="['card-footer bg-tertiary rounded-lg', {'card-footer-quote': quote}]"
+            >
+                <div class="icon-item align-start" v-if="quote">
+                    <ov-icon class="primary" name="la-quote-right-solid" :scale="1"/>
+                    <span v-html="quote" class="text-justify"></span>
+                </div>
+                <div class="icon-item" v-if="location">
+                    <ov-icon class="primary" :scale="1" name="la-map-marker-solid"/>
+                    <span class="secondary">{{ location }}</span>
+                </div>
                 <div class="icon-item" v-if="score">
                     <ov-icon class="primary" :scale="1" name="la-award-solid"/>
                     <span class="secondary">{{ score }}</span>
@@ -96,12 +111,12 @@ const duration = computed(() => {
 <style lang="scss">
 .card {
     display: flex;
-    padding: var(--spacer);
+    padding: calc(var(--spacer) / 2);
 
     .card-aside {
         position: relative;
-        width: var(--card-image-size);
-        margin-right: calc(var(--spacer) / 2);
+        margin: calc(var(--spacer) / 2);
+        margin-right: 0;
     }
 
     .card-image {
@@ -119,13 +134,22 @@ const duration = computed(() => {
         }
     }
 
+    .card-header {
+        padding: calc(var(--spacer) / 2);
+        padding-bottom: 0;
+        min-height: 3.8em;
+
+        & + .card-footer {
+            margin-top: calc(var(--spacer) / 2);
+        }
+    }
 
     .card-title {
         margin-bottom: 0;
         text-transform: uppercase;
 
         & + .card-caption {
-            margin-top: calc(var(--spacer) / 4);
+            margin-top: calc(var(--spacer) / 2);
         }
 
         .card-subtitle {
@@ -153,14 +177,12 @@ const duration = computed(() => {
         display: flex;
         flex-direction: column;
         width: 100%;
-
-        > div + div {
-            padding-top: calc(var(--spacer) / 2);
-        }
     }
 
     .card-body {
         text-align: justify;
+        padding: calc(var(--spacer) / 2);
+        margin-top: 0 !important;
 
         p {
             margin-bottom: calc(var(--spacer) / 3);
@@ -189,6 +211,23 @@ const duration = computed(() => {
             }
         }
     }
+
+    .card-footer {
+        padding: calc(var(--spacer) / 2);
+
+        &-quote {
+            margin-top: calc(var(--spacer) / 2);
+            margin-bottom: calc(var(--spacer) / 2);
+        }
+
+        .icon-item {
+            margin: 0;
+
+            & + .icon-item {
+                margin-top: calc(var(--spacer) / 2);
+            }
+        }
+    }
 }
 
 .sidebar .card {
@@ -198,9 +237,8 @@ const duration = computed(() => {
     .card-title {
         text-transform: none;
     }
-    .card-body,
-    .card-footer {
-        padding-top: calc(var(--spacer) * 0.25);
+    .card-header + .card-footer {
+        margin-top: 0;
     }
     .card-footer {
         .ov-icon {

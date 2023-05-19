@@ -2,7 +2,6 @@
 import { defineStore } from 'pinia'
 import { SectionComponent, SectionName, Theme } from '@/types/config'
 import { useResumeStore } from '@/store/resume'
-import { pascalCase } from 'change-case'
 
 export interface RenderSection extends Omit<ConfigSection, 'resumeKey'> {
     props: {
@@ -146,7 +145,7 @@ export const useConfigStore = defineStore('config', {
                 {
                     name: SectionName.WORK,
                     component: SectionComponent[SectionName.WORK],
-                    resumeKey: 'groupedJobs',
+                    resumeKey: 'work',
                     title: 'Experience',
                     icon: 'la-briefcase-solid',
                     displayDuration: true,
@@ -155,7 +154,7 @@ export const useConfigStore = defineStore('config', {
                 {
                     name: SectionName.EDUCATION,
                     component: SectionComponent[SectionName.EDUCATION],
-                    resumeKey: 'groupedEducation',
+                    resumeKey: 'education',
                     title: 'Education',
                     icon: 'la-book-solid',
                     displayDuration: true,
@@ -245,7 +244,6 @@ export const useConfigStore = defineStore('config', {
             return result
         },
         formSections: (state: ConfigState) => {
-            const resume = useResumeStore()
             const result = []
 
             for (const sectionName of Object.values(SectionName)) {
@@ -256,19 +254,9 @@ export const useConfigStore = defineStore('config', {
                         continue
                     }
 
-                    // @ts-ignore
-                    const value = found.resumeKey.split('.').reduce((a, b) => a[b], resume)
-                    const addItemFunction = `add${pascalCase(SectionName[sectionName])}`
-
-                    result.push({
-                        ...found,
-                        model: value, // @ts-ignore
-                        addItem: addItemFunction in resume ? resume[addItemFunction] : undefined,
-                        removeItem: Array.isArray(value) ? (index: number) => value?.splice(index, 1) : undefined
-                    })
+                    result.push(found)
                 }
             }
-
             return result
         }
     }

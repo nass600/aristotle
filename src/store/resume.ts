@@ -99,47 +99,92 @@ export const useResumeStore = defineStore('resume', {
 
             this.basics.profiles?.push({network, username: '', url: ''})
         },
+        removeSocial (index: number) {
+            this.basics.profiles?.splice(index, 1)
+        },
         addSkills () {
             this.skills?.push({name: '', level: ''})
+        },
+        removeSkills (index: number) {
+            this.skills?.splice(index, 1)
         },
         addExpertise () {
             this.expertise?.push({name: '', level: ''})
         },
+        removeExpertise (index: number) {
+            this.expertise?.splice(index, 1)
+        },
         addTechnicalSkills () {
             this.technicalSkills?.push({name: '', level: ''})
+        },
+        removeTechnicalSkills (index: number) {
+            this.technicalSkills?.splice(index, 1)
         },
         addSoftSkills () {
             this.softSkills?.push({name: '', level: ''})
         },
+        removeSoftSkills (index: number) {
+            this.softSkills?.splice(index, 1)
+        },
         addEducation () {
             this.education?.push({institution: '', area: '', startDate: '', courses: []})
+        },
+        removeEducation (index: number) {
+            this.education?.splice(index, 1)
         },
         addWork () {
             this.work?.push({position: '', name: '', startDate: '', summary: []})
         },
+        removeWork (index: number) {
+            this.work?.splice(index, 1)
+        },
         addAwards () {
             this.awards?.push({title: '', awarder: '', date: ''})
+        },
+        removeAwards (index: number) {
+            this.awards?.splice(index, 1)
         },
         addCertificates () {
             this.certificates?.push({name: '', issuer: '', date: ''})
         },
+        removeCertificates (index: number) {
+            this.certificates?.splice(index, 1)
+        },
         addVolunteer () {
             this.volunteer?.push({position: '', organization: '', startDate: '', summary: []})
+        },
+        removeVolunteer (index: number) {
+            this.volunteer?.splice(index, 1)
         },
         addReferences () {
             this.references?.push({name: '', reference: '', date: ''})
         },
+        removeReferences (index: number) {
+            this.references?.splice(index, 1)
+        },
         addProjects () {
             this.projects?.push({name: '', startDate: '', summary: []})
+        },
+        removeProjects (index: number) {
+            this.projects?.splice(index, 1)
         },
         addPublications () {
             this.publications?.push({name: '', publisher: '', releaseDate: ''})
         },
+        removePublications (index: number) {
+            this.publications?.splice(index, 1)
+        },
         addInterests () {
             this.interests?.push({name: ''})
         },
+        removeInterests (index: number) {
+            this.interests?.splice(index, 1)
+        },
         addLanguages (language: string) {
             this.languages?.push({language})
+        },
+        removeLanguages (index: number) {
+            this.languages?.splice(index, 1)
         },
         load (resume: Resume) {
             this.basics = resume.basics

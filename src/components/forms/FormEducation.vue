@@ -57,6 +57,9 @@
                                 </v-col>
                             </v-row>
                         </v-col>
+                        <v-col cols="12">
+                            <v-text-field v-model="element.location" label="location" hide-details/>
+                        </v-col>
                         <v-col cols="4">
                             <v-text-field v-model="element.score" label="score" hide-details/>
                         </v-col>

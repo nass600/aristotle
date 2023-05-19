@@ -11,12 +11,17 @@ defineProps({
 <template>
     <section class="section-summary">
         <section-title :title="title" :icon="icon"/>
-        <div class="section-body" v-html="items"></div>
+        <div class="section-body">
+            <div class="summary" v-html="items"></div>
+        </div>
     </section>
 </template>
 
 <style lang="scss">
 .section-summary {
+    .summary {
+        padding: calc(var(--spacer) * 0.5);
+    }
     p {
         text-align: justify;
         margin-bottom: 0;

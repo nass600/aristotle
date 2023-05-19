@@ -12,7 +12,6 @@
   "dependencies": {
     "@fragaria/address-formatter": "^5.2.0",
     "@mdi/font": "7.0.96",
-    "change-case": "^4.1.2",
     "core-js": "^3.29.0",
     "dayjs": "^1.11.7",
     "oh-vue-icons": "^1.0.0-rc3",
