@@ -49,6 +49,10 @@ export const useResumeStore = defineStore('resume', {
             }
 
             for (const item of state.work) {
+                if (!item.name) {
+                    continue
+                }
+
                 if (item.name !== lastKey) {
                     groups.push([item])
                     lastKey = item.name
@@ -74,6 +78,9 @@ export const useResumeStore = defineStore('resume', {
             }
 
             for (const item of state.education) {
+                if (!item.institution) {
+                    continue
+                }
                 if (item.institution !== lastKey) {
                     groups.push([item])
                     lastKey = item.institution
@@ -92,6 +99,10 @@ export const useResumeStore = defineStore('resume', {
         }
     },
     actions: {
+        removeItem (index: number, prop: string) {
+            // @ts-ignore
+            this[prop]?.splice(index, 1)
+        },
         addSocial (network: ResumeSocialNetworkName) {
             if (!this.basics.profiles) {
                 this.basics.profiles = []
@@ -102,89 +113,47 @@ export const useResumeStore = defineStore('resume', {
         removeSocial (index: number) {
             this.basics.profiles?.splice(index, 1)
         },
-        addSkills () {
-            this.skills?.push({name: '', level: ''})
+        addSkills (start = false, item = {name: '', level: ''}) {
+            start ? this.skills?.unshift(item) : this.skills?.push(item)
         },
-        removeSkills (index: number) {
-            this.skills?.splice(index, 1)
+        addExpertise (start = false, item = {name: '', level: ''}) {
+            start ? this.expertise?.unshift(item) : this.expertise?.push(item)
         },
-        addExpertise () {
-            this.expertise?.push({name: '', level: ''})
+        addTechnicalSkills (start = false, item = {name: '', level: ''}) {
+            start ? this.technicalSkills?.unshift(item) : this.technicalSkills?.push(item)
         },
-        removeExpertise (index: number) {
-            this.expertise?.splice(index, 1)
+        addSoftSkills (start = false, item = {name: '', level: ''}) {
+            start ? this.softSkills?.unshift(item) : this.softSkills?.push(item)
         },
-        addTechnicalSkills () {
-            this.technicalSkills?.push({name: '', level: ''})
+        addEducation (start = false, item = {institution: '', area: '', startDate: '', courses: []}) {
+            start ? this.education?.unshift(item) : this.education?.push(item)
         },
-        removeTechnicalSkills (index: number) {
-            this.technicalSkills?.splice(index, 1)
+        addWork (start = false, item = {position: '', name: '', startDate: '', summary: []}) {
+            start ? this.work?.unshift(item) : this.work?.push(item)
         },
-        addSoftSkills () {
-            this.softSkills?.push({name: '', level: ''})
+        addAwards (start = false, item = {title: '', awarder: '', date: ''}) {
+            start ? this.awards?.unshift(item) : this.awards?.push(item)
         },
-        removeSoftSkills (index: number) {
-            this.softSkills?.splice(index, 1)
+        addCertificates (start = false, item = {name: '', issuer: '', date: ''}) {
+            start ? this.certificates?.unshift(item) : this.certificates?.push(item)
         },
-        addEducation () {
-            this.education?.push({institution: '', area: '', startDate: '', courses: []})
+        addVolunteer (start = false, item = {position: '', organization: '', startDate: '', summary: []}) {
+            start ? this.volunteer?.unshift(item) : this.volunteer?.push(item)
         },
-        removeEducation (index: number) {
-            this.education?.splice(index, 1)
+        addReferences (start = false, item = {name: '', reference: '', date: ''}) {
+            start ? this.references?.unshift(item) : this.references?.push(item)
         },
-        addWork () {
-            this.work?.push({position: '', name: '', startDate: '', summary: []})
+        addProjects (start = false, item = {name: '', startDate: '', summary: []}) {
+            start ? this.projects?.unshift(item) : this.projects?.push(item)
         },
-        removeWork (index: number) {
-            this.work?.splice(index, 1)
+        addPublications (start = false, item = {name: '', publisher: '', releaseDate: ''}) {
+            start ? this.publications?.unshift(item) : this.publications?.push(item)
         },
-        addAwards () {
-            this.awards?.push({title: '', awarder: '', date: ''})
-        },
-        removeAwards (index: number) {
-            this.awards?.splice(index, 1)
-        },
-        addCertificates () {
-            this.certificates?.push({name: '', issuer: '', date: ''})
-        },
-        removeCertificates (index: number) {
-            this.certificates?.splice(index, 1)
-        },
-        addVolunteer () {
-            this.volunteer?.push({position: '', organization: '', startDate: '', summary: []})
-        },
-        removeVolunteer (index: number) {
-            this.volunteer?.splice(index, 1)
-        },
-        addReferences () {
-            this.references?.push({name: '', reference: '', date: ''})
-        },
-        removeReferences (index: number) {
-            this.references?.splice(index, 1)
-        },
-        addProjects () {
-            this.projects?.push({name: '', startDate: '', summary: []})
-        },
-        removeProjects (index: number) {
-            this.projects?.splice(index, 1)
-        },
-        addPublications () {
-            this.publications?.push({name: '', publisher: '', releaseDate: ''})
-        },
-        removePublications (index: number) {
-            this.publications?.splice(index, 1)
-        },
-        addInterests () {
-            this.interests?.push({name: ''})
-        },
-        removeInterests (index: number) {
-            this.interests?.splice(index, 1)
+        addInterests (start = false, item = {name: ''}) {
+            start ? this.interests?.unshift(item) : this.interests?.push(item)
         },
         addLanguages (language: string) {
             this.languages?.push({language})
-        },
-        removeLanguages (index: number) {
-            this.languages?.splice(index, 1)
         },
         load (resume: Resume) {
             this.basics = resume.basics

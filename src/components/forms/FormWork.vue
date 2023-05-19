@@ -1,11 +1,16 @@
 <template>
+    <v-row v-if="model && model.length > 2">
+        <v-col cols="12" class="d-flex align-center justify-center">
+            <v-btn color="primary" prepend-icon="mdi-plus" @click="addItem(true)">Add item</v-btn>
+        </v-col>
+        <v-col cols="12"><v-divider/></v-col>
+    </v-row>
     <draggable
         v-model="model"
         class="v-container px-0"
         ghost-class="ghost-row"
         @start="drag=true"
         @end="drag=false"
-        handle=".handle"
         item-key="id">
         <template #item="{element, index}">
             <v-row>
@@ -81,7 +86,7 @@
     <v-row>
         <v-col cols="12"><v-divider/></v-col>
         <v-col cols="12" class="d-flex align-center justify-center">
-            <v-btn prepend-icon="mdi-plus" @click="addItem">Add item</v-btn>
+            <v-btn color="primary" prepend-icon="mdi-plus" @click="addItem(false)">Add item</v-btn>
         </v-col>
     </v-row>
 </template>
@@ -91,9 +96,10 @@ import type { PropType } from 'vue'
 import { ref, computed } from 'vue'
 import draggable from 'vuedraggable'
 import placeholder from '@/assets/image-placeholder.png'
+import { ResumeWork } from '@/types/resume'
 
 const props = defineProps({
-    modelValue: {type: Array as PropType<unknown[] | undefined>, required: true},
+    modelValue: {type: Array as PropType<ResumeWork[] | undefined>, required: true},
     addItem: {type: Function, required: true},
     removeItem: {type: Function, required: true}
 })

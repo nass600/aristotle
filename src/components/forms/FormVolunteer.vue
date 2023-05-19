@@ -1,4 +1,10 @@
 <template>
+    <v-row v-if="model && model.length > 2">
+        <v-col cols="12" class="d-flex align-center justify-center">
+            <v-btn color="primary" prepend-icon="mdi-plus" @click="addItem(true)">Add item</v-btn>
+        </v-col>
+        <v-col cols="12"><v-divider/></v-col>
+    </v-row>
     <draggable
         v-model="model"
         class="v-container px-0"
@@ -69,7 +75,7 @@
     <v-row>
         <v-col cols="12"><v-divider/></v-col>
         <v-col cols="12" class="d-flex align-center justify-center">
-            <v-btn prepend-icon="mdi-plus" @click="addItem">Add item</v-btn>
+            <v-btn color="primary" prepend-icon="mdi-plus" @click="addItem(false)">Add item</v-btn>
         </v-col>
     </v-row>
 </template>

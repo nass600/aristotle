@@ -257,6 +257,7 @@ export const useConfigStore = defineStore('config', {
                     result.push(found)
                 }
             }
+
             return result
         }
     }

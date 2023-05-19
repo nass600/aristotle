@@ -214,6 +214,7 @@ const duration = computed(() => {
 
     .card-footer {
         padding: calc(var(--spacer) / 2);
+        margin-right: calc(var(--spacer) / 2);
 
         &-quote {
             margin-top: calc(var(--spacer) / 2);
@@ -224,7 +225,7 @@ const duration = computed(() => {
             margin: 0;
 
             & + .icon-item {
-                margin-top: calc(var(--spacer) / 2);
+                margin-top: calc(var(--spacer) / 4);
             }
         }
     }

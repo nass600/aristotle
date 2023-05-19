@@ -64,7 +64,7 @@ const config = useConfigStore()
 
 /* app */
 :root {
-    --avatar-size: calc(var(--sidebar-width) * 0.6);
+    --avatar-size: 180px;
     --sidebar-width: calc(var(--page-width) * 0.275);
     --icon-bg-size: 2.5em;
     --card-image-size: 3em;
