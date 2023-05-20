@@ -22,7 +22,6 @@ const resume = useResumeStore()
             <template v-for="item, i in resume.groupedEducation" v-bind:key="`education-${i}`">
                 <div class="card-group" v-if="Array.isArray(item)">
                     <resume-card
-                        :class="{'card-last': i === item.length - 1}"
                         v-for="child, i in item"
                         v-bind:key="`study-${i}`"
                         :logo="child.logo"
@@ -35,6 +34,7 @@ const resume = useResumeStore()
                         :score="child.score"
                         :location="child.location"
                         :link="child.url"
+                        :last="i === item.length - 1"
                         :display-current="true"
                         :display-body="displayBody"
                         :display-duration="displayDuration"

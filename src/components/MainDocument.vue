@@ -120,7 +120,7 @@ const config = useConfigStore()
             margin-right: calc(var(--spacer) * 0.25);
         }
 
-        span {
+        span, small {
             word-wrap: break-word;
             flex: 1;
             min-width: 0;
@@ -133,7 +133,7 @@ const config = useConfigStore()
 
     .br-print {
         display: none;
-        height: 9pt;
+        height: 1pt;
     }
 
     .sidebar {

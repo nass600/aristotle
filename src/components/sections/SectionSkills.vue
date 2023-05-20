@@ -22,7 +22,7 @@ defineProps({
                             <span v-if="item.level && !isNaN(parseInt(item.level))">
                                 <ov-icon
                                     v-for="index in 5" v-bind:key="`skill-${index}`"
-                                    class="primary"
+                                    class="primary mr-0"
                                     :scale="0.75"
                                     :name="index <= parseInt(item.level) ? 'bi-circle-fill' : 'bi-circle'"
                                 />

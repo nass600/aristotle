@@ -16,6 +16,7 @@ const props = defineProps({
     score: {type: String, required: false},
     location: {type: String, required: false},
     link: {type: String, required: false},
+    last: {type: Boolean, required: false, default: false},
     tags: {type: Array as PropType<string[]>, required: false},
     displayDuration: {type: Boolean, required: false, default: true},
     displayCurrent: {type: Boolean, required: false, default: false},
@@ -47,11 +48,12 @@ const duration = computed(() => {
 </script>
 
 <template>
-    <div class="card">
+    <div :class="['card', {'card-last': last}]">
         <div class="card-aside">
             <div class="card-image">
                 <img v-if="logo" :src="logo" :alt="title"/>
             </div>
+            <div v-if="last" class="card-aside-overlay"></div>
         </div>
         <div class="card-block">
             <div class="card-header">
@@ -89,19 +91,19 @@ const duration = computed(() => {
                 </div>
                 <div class="icon-item" v-if="location">
                     <ov-icon class="primary" :scale="1" name="la-map-marker-solid"/>
-                    <span class="secondary">{{ location }}</span>
+                    <small class="secondary">{{ location }}</small>
                 </div>
                 <div class="icon-item" v-if="score">
                     <ov-icon class="primary" :scale="1" name="la-award-solid"/>
-                    <span class="secondary">{{ score }}</span>
+                    <small class="secondary">{{ score }}</small>
                 </div>
                 <div class="icon-item" v-if="link">
                     <ov-icon class="primary" :scale="1" name="la-link-solid"/>
-                    <span class="secondary">{{ link }}</span>
+                    <small class="secondary">{{ link }}</small>
                 </div>
                 <div class="icon-item" v-if="tags">
                     <ov-icon class="primary" :scale="1" name="la-tags-solid"/>
-                    <span class="secondary">{{ tags.join(', ') }}</span>
+                    <small class="secondary">{{ tags.join(', ') }}</small>
                 </div>
             </div>
         </div>
@@ -167,9 +169,10 @@ const duration = computed(() => {
         align-items: center;
         background-color: var(--badge-bg);
         color: var(--badge-color);
-        padding: 0 calc(var(--spacer) * 0.125);
+        padding: 0 calc(var(--spacer) * 0.25);
         border-radius: 3px;
-        line-height: 1.2;
+        line-height: 1.4;
+        font-size: 0.8em;
         margin-left: calc(var(--spacer) * 0.5);
     }
 
@@ -267,6 +270,14 @@ const duration = computed(() => {
                     top: calc(var(--spacer) * -1);
                 }
 
+                &-overlay {
+                    background-color: var(--color-background);
+                    position: absolute;
+                    width: 100%;
+                    top: calc((var(--card-image-size) / 2) - (var(--card-timeline-dots-size) / 2) - var(--card-timeline-thickness));
+                    bottom: 0;
+                }
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -293,7 +304,7 @@ const duration = computed(() => {
 
     .card.card-last {
         .card-aside::before {
-            bottom: 92%;
+            bottom: 0;
         }
     }
 }

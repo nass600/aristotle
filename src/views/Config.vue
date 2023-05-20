@@ -127,8 +127,11 @@ const blanks = computed({
     get() {
         return store.blanks
     },
-    set(values) {
-        store.blanks = parseInt(String(values))
+    set(value) {
+        if (!value) {
+            value = 0
+        }
+        store.blanks = parseInt(String(value))
     }
 })
 </script>
