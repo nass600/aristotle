@@ -193,23 +193,18 @@ export const useConfigStore = defineStore('config', {
             const resume = useResumeStore()
             const result: RenderSections = {'sidebar': [], 'main': []}
 
-            for (const sectionName of Object.values(SectionName)) {
-                for (const panel of ['sidebar', 'main']) {
-                    const found = state.sections[panel].find((section: ConfigSection) => section.name === sectionName)
-
-                    if (!found) {
-                        continue
-                    }
+            for (const panel of ['sidebar', 'main']) {
+                for (const section of state.sections[panel]) {
                     // @ts-ignore
-                    const value = found.resumeKey.split('.').reduce((a, b) => a[b], resume)
+                    const value = section.resumeKey.split('.').reduce((a, b) => a[b], resume)
 
                     if ((!Array.isArray(value) && !value) || (Array.isArray(value) && value.length === 0)) {
                         continue
                     }
 
-                    const {resumeKey, ...rest} = found
+                    const {resumeKey, ...rest} = section
 
-                    if (sectionName === SectionName.BASICS) {
+                    if (section.name === SectionName.BASICS) {
                         // @ts-ignore
                         if (!value.name && !value.label && !value.background && !value.picture) { continue }
 
@@ -222,7 +217,7 @@ export const useConfigStore = defineStore('config', {
                                 picture: value.picture,
                             }
                         })
-                    } else if (sectionName === SectionName.CONTACT) {
+                    } else if (section.name === SectionName.CONTACT) {
                         // @ts-ignore
                         if (!value.email && !value.phone && !value.url && Object.keys(value.location).length === 0) { continue }
 
