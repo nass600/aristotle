@@ -99,7 +99,7 @@ const duration = computed(() => {
                 </div>
                 <div class="icon-item" v-if="link">
                     <ov-icon class="primary" :scale="1" name="la-link-solid"/>
-                    <small class="secondary">{{ link }}</small>
+                    <small class="secondary"><a :href="link" target="_blank">{{ link }}</a></small>
                 </div>
                 <div class="icon-item" v-if="tags">
                     <ov-icon class="primary" :scale="1" name="la-tags-solid"/>
@@ -111,6 +111,8 @@ const duration = computed(() => {
 </template>
 
 <style lang="scss">
+@use '@/styles/settings.scss';
+
 .card {
     display: flex;
     padding: calc(var(--spacer) / 2);
@@ -241,13 +243,21 @@ const duration = computed(() => {
     .card-title {
         text-transform: none;
     }
-    .card-header + .card-footer {
-        margin-top: 0;
-    }
+    // .card-header + .card-footer {
+    //     margin-top: 0;
+    // }
     .card-footer {
+        padding: calc(var(--spacer) / 4);
+        margin: calc(var(--spacer) / 4);
+        border-radius: map-get(settings.$rounded, null) !important;
+
         .ov-icon {
             display: none;
         }
+    }
+
+    & + .card {
+        padding-top: 0;
     }
 }
 

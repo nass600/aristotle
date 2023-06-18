@@ -35,7 +35,7 @@ export default createVuetify({
                     'doc-sidebar-background': '#f0db4f',
                     'doc-sidebar-text': '#525052',
                     'doc-sidebar-primary': '#000000',
-                    'doc-sidebar-secondary': '#92810c',
+                    'doc-sidebar-secondary': '#93810d',
                     'doc-sidebar-tertiary': '#f0db4f',
                 }
             },

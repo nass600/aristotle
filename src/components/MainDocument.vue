@@ -148,9 +148,9 @@ const config = useConfigStore()
         width: var(--sidebar-width);
         font-size: calc(var(--c-font-size-base-sidebar) * var(--screen-multiplier));
 
-        & a {
-            color: var(--color-text);
-        }
+        // & a {
+        //     color: var(--color-text);
+        // }
 
         & p {
             font-size: calc(var(--c-font-size-base) * 1.3);
