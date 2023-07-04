@@ -9,6 +9,10 @@
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nass600/aristotle.git"
+  },
   "dependencies": {
     "@fragaria/address-formatter": "^5.2.0",
     "@mdi/font": "7.0.96",

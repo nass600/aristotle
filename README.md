@@ -13,7 +13,7 @@
 
 Download the repo and build the Chrome extension
 ```bash
-git clone git@bitbucket.org:nass600/tivan
+git clone git@github.com:nass600/tivan
 cd tivan
 npm install
 ```
@@ -26,7 +26,7 @@ npm run dev
 
 ## Production
 
-This repo is automatically deployed to [**Netlify**](https://app.netlify.com/sites/cheery-toffee-f2d436/overview) every time there is a change in the `master` branch
+This repo is automatically deployed to [**Netlify**](https://app.netlify.com/sites/aristotle-f2d436/overview) every time there is a change in the `master` branch
 
 ## License
 
