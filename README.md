@@ -26,7 +26,7 @@ npm run dev
 
 ## Production
 
-This repo is automatically deployed to [**Netlify**](https://app.netlify.com/sites/aristotle-f2d436/overview) every time there is a change in the `master` branch
+This repo is automatically deployed to [**Netlify**](https://app.netlify.com/sites/aristotle-f2d436/overview) every time there is a change in the `main` branch
 
 ## License
 
