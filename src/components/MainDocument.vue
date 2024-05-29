@@ -133,8 +133,9 @@ const config = useConfigStore()
     }
 
     .br-print {
-        display: none;
-        height: 1pt;
+        height: 4px;
+        line-height: 4px;
+        width: 100%;
     }
 
     .sidebar {
@@ -263,7 +264,7 @@ const config = useConfigStore()
         overflow: hidden;
 
         .br-print {
-            display: block;
+            display: flex;
         }
     }
 
