@@ -102,6 +102,7 @@ const config = useConfigStore()
 }
 
 .main-document {
+    background-color: red;
     width: var(--page-width);
     line-height: 1.4;
     display: flex;
@@ -147,10 +148,7 @@ const config = useConfigStore()
         flex: 0 0 var(--sidebar-width);
         width: var(--sidebar-width);
         font-size: calc(var(--c-font-size-base-sidebar) * var(--screen-multiplier));
-
-        // & a {
-        //     color: var(--color-text);
-        // }
+        -webkit-print-color-adjust: exact !important;
 
         & p {
             font-size: calc(var(--c-font-size-base) * 1.3);
@@ -166,6 +164,7 @@ const config = useConfigStore()
         flex: 1;
         background-color: var(--color-background);
         color: var(--color-text);
+        -webkit-print-color-adjust: exact !important;
     }
 
     a {
